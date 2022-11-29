@@ -10,8 +10,8 @@ $sql = 'INSERT INTO tb_reserva (
     qtd_hospedes 	
     valor_reserva 
     ) VALUE (
-    "1",
-    "1",
+    '1',
+    '1',
     "'. $_POST['daen']. '",
     "'. $_POST['dasa']. '",
     "'. $_POST['quanad']. '",
