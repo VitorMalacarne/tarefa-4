@@ -12,7 +12,7 @@ require_once '../../conexao.php';
         <?php
         $stmt_count = $pdo->prepare("SELECT COUNT(*) AS total FROM tb_usuario");
         $stmt_count->execute();
-        $stmt = $pdo->prepare("SELECT id,nome,email,senha,perfil FROM tb_usuario ORDER BY nome");
+        $stmt = $pdo->prepare("SELECT id,nome,email,senha,telefone FROM tb_usuario ORDER BY nome");
         $stmt->execute();
         $total = $stmt_count->fetchColumn();
         if ($total > 0): ?>
@@ -23,7 +23,7 @@ require_once '../../conexao.php';
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Senha</th>
-                    <th>Perfil</th>
+                    <th>Telefone</th>
                     <th>Opções para o cadastro</th>
                 </tr>
             </thead>
@@ -34,7 +34,7 @@ require_once '../../conexao.php';
                     <td><?php echo $resultado['nome'] ?></td>
                     <td><?php echo $resultado['email'] ?></td>
                     <td><?php echo $resultado['senha'] ?></td>
-                    <td><?php echo $resultado['perfil'] ?></td>
+                    <td><?php echo $resultado['telefone'] ?></td>
                     <td>
                         <a href="edit.php?id=<?php echo $resultado['id'] ?>">Alterar</a>
                         <a href="delete.php?id=<?php echo $resultado['id'] ?>" onclick="return confirm('Tem certeza de que deseja excluir o registro?');">Excluir</a>

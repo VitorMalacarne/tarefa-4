@@ -10,25 +10,25 @@
 			<h1>POUSADA DAS CAPIVARAS</h1>
 			<nav id="headnav">
 				<ul>
-					<li><a href="principal.html">HOME</a></li>
-					<li><a href="admin/sub/view/reserva.html">RESERVA</a></li>
-					<li><a href="acomodacoes.html">ACOMODAÇÕES</a></li>
+					<li><a href="../../../principal.html">HOME</a></li>
+					<li><a href="reserva.html" class="active">RESERVA</a></li>
+					<li><a href="../../../acomodacoes.html">ACOMODAÇÕES</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div id="maindiv">
 			<nav id="mainnav">
 				<ul>
-					<li><a href="principal.html">A Pousada</a></li>
-					<li><a href="admin/sub/view/reserva.html">Reserva</a></li>
-					<li><a href="acomodacoes.html">Acomodações</a></li>
-					<li><a href="faleconosco.html">Fale Conosco</a></li>
+					<li><a href="../../../principal.html">A Pousada</a></li>
+					<li><a href="reserva.html" class="active">Reserva</a></li>
+					<li><a href="../../../acomodacoes.html">Acomodações</a></li>
+					<li><a href="../../../faleconosco.html">Fale Conosco</a></li>
 				</ul>
 			</nav>
 			<div class="phantomdiv"></div>
 			<main>
 				<h2>Cadastro de usuário</h2>
-				<form action="admin/sub/controller.php" method="post">
+				<form action="cadastroacomodacao.php" method="post">
 					<fieldset>
 						<legend>Responsável</legend>
 						<label for="nome">Nome Completo</label>
@@ -47,7 +47,7 @@
 			</main>
 			<aside>
 				<p><big><b>Nossos<br>parceiros</b></big></p>
-				<img src="imagens/uber.png">&nbsp;<img src="imagens/aiqfome.png">&nbsp;<img src="imagens/lar.png">&nbsp;<img src="imagens/utfpr.png">
+				<img src="../../imagens/uber.png">&nbsp;<img src="../../imagens/aiqfome.png">&nbsp;<img src="../../imagens/lar.png">&nbsp;<img src="../../imagens/utfpr.png">
 			</aside>
 		</div>
 		<footer>
