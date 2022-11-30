@@ -6,6 +6,7 @@ require_once '../../conexao.php';
     <head>
         <meta charset="utf-8">
         <title>Lista de usuários</title>
+        <link rel="stylesheet" type="text/css" href="../../../style.css">
     </head>
     <body>
         <h2>Lista de usuários cadastrados</h2>

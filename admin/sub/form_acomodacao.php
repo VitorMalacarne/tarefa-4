@@ -2,53 +2,70 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Cadastro - Pousada das Capivaras</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Acomodações - Administração Pousada das Capivaras</title>
+		<link rel="stylesheet" type="text/css" href="../../style.css">
 	</head>
 	<body>
 		<header>
-			<h1>POUSADA DAS CAPIVARAS</h1>
+			<h1>POUSADA DAS CAPIVARAS - Administração</h1>
 			<nav id="headnav">
 				<ul>
-					<li><a href="../../../principal.html">HOME</a></li>
-					<li><a href="reserva.html" class="active">RESERVA</a></li>
-					<li><a href="../../../acomodacoes.html">ACOMODAÇÕES</a></li>
+				<li><a href="index.html">HOME</a></li>
+                <li><a href="sub/view/list.php">Usuários</a></li>
+                <li><a href="conexao.php">Conexão</a></li>
+                <li><a href="../cadastro.html">Cadastro</a></li>
+                <li><a href="sub/form_acomodacao.php">Acomodações</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div id="maindiv">
 			<nav id="mainnav">
 				<ul>
-					<li><a href="../../../principal.html">A Pousada</a></li>
-					<li><a href="reserva.html" class="active">Reserva</a></li>
-					<li><a href="../../../acomodacoes.html">Acomodações</a></li>
-					<li><a href="../../../faleconosco.html">Fale Conosco</a></li>
+				<li><a href="index.html">HOME</a></li>
+                <li><a href="sub/view/list.php">Usuários</a></li>
+                <li><a href="conexao.php">Conexão</a></li>
+                <li><a href="../cadastro.html">Cadastro</a></li>
+                <li><a href="sub/form_acomodacao.php">Acomodações</a></li>
 				</ul>
 			</nav>
 			<div class="phantomdiv"></div>
 			<main>
-				<h2>Cadastro de usuário</h2>
-				<form action="cadastroacomodacao.php" method="post">
+				<h2>Cadastro de acomodações</h2>
+				<form action="admin/sub/cadastraracomodacao.php" method="post">
 					<fieldset>
-						<legend>Responsável</legend>
-						<label for="nome">Nome Completo</label>
-						<input type="text" name="nome" placeholder="João Da Silva" autocomplete="off"><br>
-						<label for="email">E-mail</label>
-						<input type="text" name="email" placeholder="email@mail.com" autocomplete="off"><br>
-						<label for="telefone">Telefone</label>
-						<input type="text" name="telefone" placeholder="(XX) XXXXX-XXXX" autocomplete="off"><br>
-                        <label for="senha">Senha</label>
-                        <input type="text" name="senha" placeholder="*********" autocomplete="off"><br>
+						<legend>Acomodações</legend>
+						<label for="qtd_camas_casal">Quantidades de cama de casal:</label>
+						<select name="qtd_camas_casal">
+						<option value="0">Selecione</option>	
+						<option value="1">Uma</option>
+						<option value="2">Duas</option>
+						</select><br>
+						<label for="qtd_camas_solteiro">Quatidades de cama de solteiro:</label>
+						<select name="qtd_camas_solteiro">
+						<option value="0">Selecione</option>
+						<option value="1">Uma</option>
+						<option value="2">Duas</option>
+						<option value="3">Três</option>
+						</select><br>
+						<label for="tipo_acomodacao">Tipo de acomodação:</label>
+						<select name="tipo_acomodacao">
+						<option value="0">Selecione</option>
+						<option value="1">Standart</option>
+						<option value="2">Luxo</option>
+						</select><br>
+                        <label for="tipo_apartamento">Tipo de apartamento:</label>
+                        <select name="tipo_apartamento">
+						<option value="0">Selecione</option>
+						<option value="1">Dupla</option>
+						<option value="2">Tripla</option>
+						<option value="3">Família</option>
+						</select><br>
 					</fieldset>
 					
-					<button type="submit">Reservar</button>
+					<button type="submit">Adicionar</button>
 					
 				</form>
 			</main>
-			<aside>
-				<p><big><b>Nossos<br>parceiros</b></big></p>
-				<img src="../../imagens/uber.png">&nbsp;<img src="../../imagens/aiqfome.png">&nbsp;<img src="../../imagens/lar.png">&nbsp;<img src="../../imagens/utfpr.png">
-			</aside>
 		</div>
 		<footer>
 			<hr>
