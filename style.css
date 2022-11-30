@@ -155,7 +155,7 @@ select {
   background-color: #1AB6D9;
 	border: 2px double #D91111;
 }
-input[type=button]{
+input[type=submit]{
 	cursor: pointer;
 }
 textarea {
