@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Acomodações - Administração Pousada das Capivaras</title>
-		<link rel="stylesheet" type="text/css" href="../../style.css">
+		<link rel="stylesheet" type="text/css" href="../../../style.css">
 	</head>
 	<body>
 		<header>
@@ -31,7 +31,7 @@
 			<div class="phantomdiv"></div>
 			<main>
 				<h2>Cadastro de acomodações</h2>
-				<form action="admin/sub/cadastraracomodacao.php" method="post">
+				<form action="../model/cadastraracomodacao.php" method="post">
 					<fieldset>
 						<legend>Acomodações</legend>
 						<label for="qtd_camas_casal">Quantidades de cama de casal:</label>

@@ -1,6 +1,6 @@
 <?php
 
-require_once '../conexao.php';
+require_once '../../conexao.php';
 
 @$qtd_camas_casal = $_POST['qtd_camas_casal'];
 @$qtd_camas_solteiro = $_POST['qtd_camas_solteiro'];
