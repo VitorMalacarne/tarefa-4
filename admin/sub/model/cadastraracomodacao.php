@@ -31,7 +31,7 @@ $stmt->bindParam(':qtd_camas_solteiro', $qtd_camas_solteiro);
 $stmt->bindParam(':tipo_acomodacao', $tipo_acomodacao);
 $stmt->bindParam(':tipo_apartamento', $tipo_apartamento);
 if($stmt->execute()){
-    echo "Pessoa cadastrada com sucesso!";
+    echo "Acomodação cadastrada com sucesso!";
 }
 else{
     echo "Ocorreu um erro na inclusão de registro";

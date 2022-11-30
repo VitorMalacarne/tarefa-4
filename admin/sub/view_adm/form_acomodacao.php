@@ -11,10 +11,10 @@
 			<nav id="headnav">
 				<ul>
 				<li><a href="index.html">HOME</a></li>
-                <li><a href="sub/view/list.php">Usuários</a></li>
-                <li><a href="conexao.php">Conexão</a></li>
-                <li><a href="../cadastro.html">Cadastro</a></li>
-                <li><a href="sub/form_acomodacao.php">Acomodações</a></li>
+                <li><a href="list.php">Usuários</a></li>
+                <li><a href="../../conexao.php">Conexão</a></li>
+                <li><a href="../view_usuario/cadastro.html">Cadastro</a></li>
+                <li><a href="form_acomodacao.php" class="active">Acomodações</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -22,10 +22,10 @@
 			<nav id="mainnav">
 				<ul>
 				<li><a href="index.html">HOME</a></li>
-                <li><a href="sub/view/list.php">Usuários</a></li>
-                <li><a href="conexao.php">Conexão</a></li>
-                <li><a href="../cadastro.html">Cadastro</a></li>
-                <li><a href="sub/form_acomodacao.php">Acomodações</a></li>
+                <li><a href="list.php">Usuários</a></li>
+                <li><a href="../../conexao.php">Conexão</a></li>
+                <li><a href="../view_usuario/cadastro.html">Cadastro</a></li>
+                <li><a href="form_acomodacao.php" class="active">Acomodações</a></li>
 				</ul>
 			</nav>
 			<div class="phantomdiv"></div>
@@ -36,29 +36,29 @@
 						<legend>Acomodações</legend>
 						<label for="qtd_camas_casal">Quantidades de cama de casal:</label>
 						<select name="qtd_camas_casal">
-						<option value="0">Selecione</option>	
+						<option value="" disabled selected hidden>Selecione</option>	
 						<option value="1">Uma</option>
 						<option value="2">Duas</option>
 						</select><br>
 						<label for="qtd_camas_solteiro">Quatidades de cama de solteiro:</label>
 						<select name="qtd_camas_solteiro">
-						<option value="0">Selecione</option>
+						<option value="" disabled selected hidden>Selecione</option>
 						<option value="1">Uma</option>
 						<option value="2">Duas</option>
 						<option value="3">Três</option>
 						</select><br>
 						<label for="tipo_acomodacao">Tipo de acomodação:</label>
 						<select name="tipo_acomodacao">
-						<option value="0">Selecione</option>
-						<option value="1">Standart</option>
-						<option value="2">Luxo</option>
+						<option value="" disabled selected hidden>Selecione</option>
+						<option value="standart">Standart</option>
+						<option value="luxo">Luxo</option>
 						</select><br>
                         <label for="tipo_apartamento">Tipo de apartamento:</label>
                         <select name="tipo_apartamento">
-						<option value="0">Selecione</option>
-						<option value="1">Dupla</option>
-						<option value="2">Tripla</option>
-						<option value="3">Família</option>
+						<option value="" disabled selected hidden>Selecione</option>
+						<option value="dupla">Dupla</option>
+						<option value="tripla">Tripla</option>
+						<option value="familia">Família</option>
 						</select><br>
 					</fieldset>
 					
