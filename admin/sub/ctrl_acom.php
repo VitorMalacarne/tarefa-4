@@ -1,25 +1,25 @@
 <?php
 
 require_once '../conexao.php';
-require_once 'model/usuario.dao.php';
+require_once 'model/acomodacao.dao.php';
 
 // Instanciar objeto DAO
-$usuarioDAO = new UsuarioDAO($pdo);
+$acomodacaoDAO = new AcomodacaoDAO($pdo);
 
 // Recebe a ação
 
 $action = @$_REQUEST['action'];
-$view = 'view_adm/list.php';// View default
+$view = 'view_adm/list_acomodacao.php';// View default
 
 // Decidir qual ação será tomada
 if($action == 'novo') {
-    $view = 'view_usuario/cadastro.html';
+    $view = 'view_adm/form_acomodacao.php';
 } else if($action == 'editar') {
     if(@$_REQUEST['id']) {
-        $view = 'view_usario/cadastro.html';
+        $view = 'view_adm/form_acomodacao.php';
         $usuario = $usuarioDAO->getById($_REQUEST['id']);
     } else {
-        $message = "A pessoa não está cadastrada";
+        $message = "A acomocação não está cadastrada";
     }
 
 } else if($action == 'deletar') {
@@ -27,7 +27,7 @@ if($action == 'novo') {
 
     if($id) {
         if($usuarioDAO->delete($id) > 0)
-            $message = "Pessoa deletada com sucesso.";
+            $message = "Acomodação deletada com sucesso.";
         else
             $message = "Nenhuma pessoa foi deletada.";
     } else 
@@ -58,7 +58,7 @@ if($action == 'novo') {
     
 } 
 
-if($view == 'view_adm/list.php') {
+if($view == 'view_adm/list_acomodacao.php') {
     // Buscar as pessoas no Banco de Dados
     $usuarios = $usuarioDAO->getAll();
 

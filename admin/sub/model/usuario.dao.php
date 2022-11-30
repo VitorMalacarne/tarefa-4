@@ -1,6 +1,6 @@
 <?php
 
-class AcomodacaoDAO {
+class UsuarioDAO {
     private $pdo;
 
     function __construct($pdo) {
@@ -14,7 +14,7 @@ class AcomodacaoDAO {
      * Return: Lista de pessoas
      */
     function getAll() {
-        $sql = "SELECT * from tb_acomodacao";
+        $sql = "SELECT * from tb_usuario";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
 
@@ -27,7 +27,7 @@ class AcomodacaoDAO {
      * Return: Objeto pessoa.
      */
     function getById($id) {
-        $sql = "SELECT * FROM tb_acomodacao WHERE id = ?";
+        $sql = "SELECT * FROM tb_usuario WHERE id = ?";
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(1, $id);
@@ -35,33 +35,33 @@ class AcomodacaoDAO {
         $stmt->execute();
         return $stmt->fetchObject();
     }
-
+    
     function insert($post) {
-        $sql = "INSERT INTO tb_acomodacao (
-            qtd_camas_casal, qtd_camas_solteiro, tipo_acomodacao, tipo_apartamento) 
-            VALUES (:qtd_camas_casal,:qtd_camas_solteiro,:tipo_acomodacao,:tipo_apartamento)";
+        $sql = "INSERT INTO tb_usuario (
+            nome, email, senha, telefone)
+            VALUES (:nome,:email,:senha,:telefone)";
         
         $stmt = $this->$pdo->prepare($sql);
-        $stmt->bindParam(':qtd_camas_casal', $qtd_camas_casal);
-        $stmt->bindParam(':qtd_camas_solteiro', $qtd_camas_solteiro);
-        $stmt->bindParam(':tipo_acomodacao', $tipo_acomodacao);
-        $stmt->bindParam(':tipo_apartamento', $tipo_apartamento);
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':telefone', $telefone);
+        $stmt->bindParam(':senha', $senha);
         return $stmt->execute();
     }
 
     function update($post) {
-        $sql = 'UPDATE tb_acomodacao SET 
-            qtd_camas_casal = :qtd_camas_casal,
-            qtd_camas_solteiro = :qtd_camas_solteiro,
-            tipo_acomodacao = :tipo_acomodacao,
-            tipo_apartamento = :tipo_apartamento
+        $sql = 'UPDATE tb_usuario SET 
+            nome = :nome,
+            email = :email,
+            telefone = :telefone,
+            senha = :senha
             WHERE id = :id';
         
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(':qtd_camas_casal', $post['qtd_camas_casal']);
-        $stmt->bindValue(':qtd_camas_solteiro', $post['qtd_camas_solteiro']);
-        $stmt->bindValue(':tipo_acomodacao', $post['tipo_acomodacao']);
-        $stmt->bindValue(':tipo_apartamento', $post['tipo_apartamento']);
+        $stmt->bindValue(':nome', $post['nome']);
+        $stmt->bindValue(':email', $post['email']);
+        $stmt->bindValue(':telefone', $post['telefone']);
+        $stmt->bindValue(':senha', $post['senha']);
         $stmt->bindValue(':id', $post['id']);
 
         return $stmt->execute();
@@ -73,7 +73,7 @@ class AcomodacaoDAO {
      * Return: quantidade de linhas apagadas.
      */
     function delete($id) {
-        $sql = "DELETE FROM tb_acomodacao WHERE id = ?";
+        $sql = "DELETE FROM tb_usuario WHERE id = ?";
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(1, $id);
