@@ -1,7 +1,7 @@
 <?php
 
-require_once '../conexao.php';
-require_once 'model/usuario.dao.php';
+require_once '../../conexao.php';
+require_once '../model/usuario.dao.php';
 
 // Instanciar objeto DAO
 $usuarioDAO = new UsuarioDAO($pdo);
@@ -9,14 +9,14 @@ $usuarioDAO = new UsuarioDAO($pdo);
 // Recebe a ação
 
 $action = @$_REQUEST['action'];
-$view = 'view_adm/list.php';// View default
+$view = 'list.php';// View default
 
 // Decidir qual ação será tomada
 if($action == 'novo') {
-    $view = 'view_usuario/cadastro.html';
+    $view = './../view_usuario/cadastro.html';
 } else if($action == 'editar') {
     if(@$_REQUEST['id']) {
-        $view = 'view_usario/cadastro.html';
+        $view = './../view_usario/cadastro.html';
         $usuario = $usuarioDAO->getById($_REQUEST['id']);
     } else {
         $message = "A pessoa não está cadastrada";
@@ -43,7 +43,7 @@ if($action == 'novo') {
             $res = $usuarioDAO->update($_POST);
             
         if(!$res) {
-            $view = 'view_usuario/cadastro';
+            $view = '../view_usuario/cadastro.html';
             
             $message = "Erro ao salvar pessoa";
         } else
@@ -51,14 +51,14 @@ if($action == 'novo') {
 
     } catch (\Throwable $th) {
         //throw $th;
-        $view = 'view_usuario/cadastro';
+        $view = '../view_usuario/cadastro.html';
         $message = "Falha ao salvar pessoa. Detalhes do erro: " . $th->getMessage(); 
     }
 
     
 } 
 
-if($view == 'view_adm/list.php') {
+if($view == 'list.php') {
     // Buscar as pessoas no Banco de Dados
     $usuarios = $usuarioDAO->getAll();
 

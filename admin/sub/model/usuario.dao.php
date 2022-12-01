@@ -42,10 +42,10 @@ class UsuarioDAO {
             VALUES (:nome,:email,:senha,:telefone)";
         
         $stmt = $this->$pdo->prepare($sql);
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':telefone', $telefone);
-        $stmt->bindParam(':senha', $senha);
+        $stmt->bindParam(':nome', $post['nome']);
+        $stmt->bindParam(':email', $post['email']);
+        $stmt->bindParam(':telefone', $post['senha']);
+        $stmt->bindParam(':senha', $post['telefone']);
         return $stmt->execute();
     }
 

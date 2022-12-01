@@ -29,9 +29,9 @@ if($action == 'novo') {
         if($usuarioDAO->delete($id) > 0)
             $message = "Acomodação deletada com sucesso.";
         else
-            $message = "Nenhuma pessoa foi deletada.";
+            $message = "Nenhuma acomodação foi deletada.";
     } else 
-        $message = "Informe o código da pessoa para deletar.";
+        $message = "Informe o código da acomodação para deletar.";
     
 
 } else if($action == 'salvar') {
@@ -43,16 +43,16 @@ if($action == 'novo') {
             $res = $usuarioDAO->update($_POST);
             
         if(!$res) {
-            $view = 'view_usuario/cadastro';
+            $view = 'view_adm/form_acomodacao';
             
-            $message = "Erro ao salvar pessoa";
+            $message = "Erro ao salvar acomodação";
         } else
             $message = "Salvo com sucesso";
 
     } catch (\Throwable $th) {
         //throw $th;
-        $view = 'view_usuario/cadastro';
-        $message = "Falha ao salvar pessoa. Detalhes do erro: " . $th->getMessage(); 
+        $view = 'view_adm/form_acomodacao';
+        $message = "Falha ao salvar acomodação. Detalhes do erro: " . $th->getMessage(); 
     }
 
     
@@ -61,8 +61,6 @@ if($action == 'novo') {
 if($view == 'view_adm/list_acomodacao.php') {
     // Buscar as pessoas no Banco de Dados
     $usuarios = $usuarioDAO->getAll();
-
-    //print_r($pessoas);
 }
 
 require_once($view); // Abrindo uma view
