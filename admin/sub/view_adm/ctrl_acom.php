@@ -32,23 +32,18 @@ if($action == 'novo') {
             $message = "Nenhuma acomodação foi deletada.";
     } else 
         $message = "Informe o código da acomodação para deletar.";
-    
 
 } else if($action == 'salvar') {
     try {
         $res;
         if( !@$_REQUEST['id']){ // Insert
-            echo 'É o que2?';
-            echo $_POST['qtd_camas_casal'];
             $res = $acomodacaoDAO->insert($_POST);
         }
         else // Update
             $res = $acomodacaoDAO->update($_POST);
             
         if(!$res) {
-            echo 'Como não salvou?';
             $view = 'form_acomodacao.php';
-            
             $message = "Erro ao salvar acomodação";
         } else{
             $message = "Salvo com sucesso";

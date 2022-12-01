@@ -29,7 +29,7 @@
 			<div class="phantomdiv"></div>
 			<main>
 				<h2>Reserva online</h2>
-				<form action="controller.php" method="post">
+				<form action="ctrl_reserva.php" method="post">
 					<fieldset>
 						<legend>Responsávlklklklklel</legend>
 						<label for="nome">Nome Completo</label>
@@ -51,6 +51,7 @@
 						<input type="number" name="quancr" min="0" max="4" step="1" value="0" autocomplete="off"required><br>
 						<label for="acom">Acomodação</label><br>
 						<select name="acom" autocomplete="off"required>
+							<option value="" disabled selected hidden>Selecione</option>
 							<option value="standart">Standart</option>
 							<option value="luxo">Luxo</option>
 						</select>
