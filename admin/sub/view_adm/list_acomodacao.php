@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($usuarios as $index => $usuario): ?>
+                <?php foreach ($acomodacoes as $index => $acomodacao): ?>
                 <tr>
                     <td><?= $acomodacao->id ?></td>
                     <td><?= $acomodacao->qtd_camas_casal ?></td>
@@ -36,8 +36,8 @@
                     <td><?= $acomodacao->tipo_acomodacao ?></td>
                     <td><?= $acomodacao->tipo_apartamento ?></td>
                     <td>
-                        <a  href="../ctrl_acom.php?action=editar&id=<?= $acomodacao->id ?>">Alterar</a>
-                        <a  href="../ctrl_acom.php?action=deletar&id=<?= $acomodacao->id ?> " onclick="return confirm('Tem certeza de que deseja excluir o registro?');">Excluir</a>
+                        <a  href="ctrl_acom.php?action=editar&id=<?= $acomodacao->id ?>">Alterar</a>
+                        <a  href="ctrl_acom.php?action=deletar&id=<?= $acomodacao->id ?> " onclick="return confirm('Tem certeza de que deseja excluir o registro?');">Excluir</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

@@ -41,7 +41,7 @@ class UsuarioDAO {
             nome, email, senha, telefone)
             VALUES (:nome,:email,:senha,:telefone)";
         
-        $stmt = $this->$pdo->prepare($sql);
+        $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':nome', $post['nome']);
         $stmt->bindParam(':email', $post['email']);
         $stmt->bindParam(':telefone', $post['senha']);

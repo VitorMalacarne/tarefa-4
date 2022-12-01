@@ -31,7 +31,9 @@
 			<div class="phantomdiv"></div>
 			<main>
 				<h2>Cadastro de acomodações</h2>
-				<form action="../model/cadastraracomodacao.php" method="post">
+				<form action="ctrl_acom.php" method="post">
+				<input type="hidden" name="action" value="salvar">
+            	<input type="hidden" name="id" value="<?= @$acomodacao->id ?>">
 					<fieldset>
 						<legend>Acomodações</legend>
 						<label for="qtd_camas_casal">Quantidades de cama de casal:</label>
@@ -63,9 +65,8 @@
 					</fieldset>
 					
 					<button type="submit">Adicionar</button>
-					
+					<a href="ctrl_acom.php">Cancelar</a>
 				</form>
-				<button>Teste</button>
 			</main>
 		</div>
 		<footer>

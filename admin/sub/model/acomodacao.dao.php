@@ -41,11 +41,11 @@ class AcomodacaoDAO {
             qtd_camas_casal, qtd_camas_solteiro, tipo_acomodacao, tipo_apartamento) 
             VALUES (:qtd_camas_casal,:qtd_camas_solteiro,:tipo_acomodacao,:tipo_apartamento)";
         
-        $stmt = $this->$pdo->prepare($sql);
-        $stmt->bindParam(':qtd_camas_casal', $qtd_camas_casal);
-        $stmt->bindParam(':qtd_camas_solteiro', $qtd_camas_solteiro);
-        $stmt->bindParam(':tipo_acomodacao', $tipo_acomodacao);
-        $stmt->bindParam(':tipo_apartamento', $tipo_apartamento);
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':qtd_camas_casal', $post['qtd_camas_casal']);
+        $stmt->bindValue(':qtd_camas_solteiro', $post['qtd_camas_solteiro']);
+        $stmt->bindValue(':tipo_acomodacao', $post['tipo_acomodacao']);
+        $stmt->bindValue(':tipo_apartamento', $post['tipo_apartamento']);
         return $stmt->execute();
     }
 
