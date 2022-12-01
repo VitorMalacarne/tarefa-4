@@ -136,6 +136,10 @@ label{
 input[type=text], input[type=email]{
 	width: 100%;
 }
+input[type=tel], input[type=password]{
+	width: 100%;
+	display: inline;
+}
 input{
 	background-color: #1AB6D9;
 	padding: 5px 10px;
