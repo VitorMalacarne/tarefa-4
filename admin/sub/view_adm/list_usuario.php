@@ -8,7 +8,7 @@
     <body>
         <h2>Lista de usuários cadastrados</h2>
 
-        <a href="controller.php?action=novo">Cadastrar usuário</a>
+        <a href="ctrl_usuario.php?action=novo">Cadastrar usuário</a>
 
         <?php if(@$message) : ?>
             <div>
@@ -36,8 +36,8 @@
                     <td><?= $usuario->senha ?></td>
                     <td><?= $usuario->telefone ?></td>
                     <td>
-                        <a  href="controller.php?action=editar&id=<?= $usuario->id ?>">Alterar</a>
-                        <a  href="controller.php?action=deletar&id=<?= $usuario->id ?> " onclick="return confirm('Tem certeza de que deseja excluir o registro?');">Excluir</a>
+                        <a  href="ctrl_usuario.php?action=editar&id=<?= $usuario->id ?>">Alterar</a>
+                        <a  href="ctrl_usuario.php?action=deletar&id=<?= $usuario->id ?> " onclick="return confirm('Tem certeza de que deseja excluir o registro?');">Excluir</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
