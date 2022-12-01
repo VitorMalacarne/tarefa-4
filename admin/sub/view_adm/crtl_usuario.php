@@ -9,7 +9,7 @@ $usuarioDAO = new UsuarioDAO($pdo);
 // Recebe a ação
 
 $action = @$_REQUEST['action'];
-$view = 'list.php';// View default
+$view = 'list_usuario.php';// View default
 
 // Decidir qual ação será tomada
 if($action == 'novo') {
@@ -58,7 +58,7 @@ if($action == 'novo') {
     
 } 
 
-if($view == 'list.php') {
+if($view == 'list_usuario.php') {
     // Buscar as pessoas no Banco de Dados
     $usuarios = $usuarioDAO->getAll();
 
