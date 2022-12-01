@@ -33,13 +33,13 @@
 					<fieldset>
 						<legend>Responsável</legend>
 						<label for="nome">Nome Completo</label>
-						<input type="text" name="nome" placeholder="João Da Silva" autocomplete="off"><br>
+						<input type="text" name="nome" placeholder="João Da Silva" autocomplete="off" required><br>
 						<label for="email">E-mail</label>
-						<input type="text" name="email" placeholder="email@mail.com" autocomplete="off"><br>
+						<input type="text" name="email" placeholder="email@mail.com" autocomplete="off" required><br>
 						<label for="telefone">Telefone</label>
-						<input type="text" name="telefone" placeholder="(XX) XXXXX-XXXX" autocomplete="off"><br>
+						<input type="tel" name="telefone" placeholder="(XX) XXXXX-XXXX" autocomplete="off" pattern="^\(?\d{2}\)\d{4}[-\s]\d{4}.*?$"required><br>
                         <label for="senha">Senha</label>
-                        <input type="text" name="senha" placeholder="*********" autocomplete="off"><br>
+                        <input type="password" name="senha" placeholder="*********" autocomplete="off" required><br>
 					</fieldset>
 					
 					<input type="submit" value="Reservar">
