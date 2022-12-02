@@ -32,15 +32,6 @@ CREATE TABLE `tb_tarifa` (
 PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
-CREATE TABLE tb_tarifa (
-    id int(11) NOT NULL, --AUTO_INCREMENT
-    preco DECIMAL DEFAULT NULL,
-    precoC DECIMAL DEFAULT NULL,
-    precoA DECIMAL DEFAULT NULL,
-    PRIMARY KEY(id)
-);
-
-
 CREATE TABLE `tb_reserva` (
 `id` INT NOT NULL AUTO_INCREMENT, 
 `id_usuario` INT NOT NULL, 

@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="../../../style.css">
     </head>
     <body>
-        <h2>Lista de acomodações cadastradas</h2>
+        <h2>Lista de reservas cadastradas</h2>
 
         <a href="ctrl_reserva.php?action=novo">Cadastrar acomodação</a>
 
@@ -17,11 +17,11 @@
         <?php endif; ?>
         <nav id="mainnav">
     		<ul>
-    		    <li><a href="index.html">HOME</a></li>
-    		    <li><a href="list_acomodacao.php">Lista de acomodações</a></li>
-    		    <li><a href="list_reserva.php">Lista de reservas</a></li>
-    		    <li><a href="list_tarifa.php">Lista de tarifas</a></li>
-    		    <li><a href="list_usuario.php">Lista de usuários</a></li>
+                <li><a href="index.html">HOME</a></li>
+    		    <li><a href="ctrl_acom.php">Lista de acomodações</a></li>
+    		    <li><a href="ctrl_reserva.php">Lista de reservas</a></li>
+    		    <li><a href="ctrl_tarifa.php">Lista de tarifas</a></li>
+    		    <li><a href="ctrl_usuario.php">Lista de usuários</a></li>
     		    <li><a href="form_acomodacao.php">Formulário de acomodações</a></li>
     		    <li><a href="form_tarifa.php">Formulário de tarifas</a></li>
     		</ul>
@@ -31,27 +31,27 @@
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>Quantidade de camas de casal</th>
-                    <th>Quantidade de camas de solteiro</th>
-                    <th>Tipo de acomodação</th>
-                    <th>Tipo de apartamento</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th>Usuário</th>
+                    <th>Acomodações</th>
+                    <th>Data de entrada</th>
+                    <th>Data de saída</th>
+                    <th>Quantidade de pessoas</th>
+                    <th>Valor da reserva</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($acomodacoes as $index => $acomodacao): ?>
+                <?php foreach ($reservas as $index => $reserva): ?>
                 <tr>
-                    <td><?= $acomodacao->id ?></td>
-                    <td><?= $acomodacao->qtd_camas_casal ?></td>
-                    <td><?= $acomodacao->qtd_camas_solteiro ?></td>
-                    <td><?= $acomodacao->tipo_acomodacao ?></td>
-                    <td><?= $acomodacao->tipo_apartamento ?></td>
+                    <td><?= $reserva->id ?></td>
+                    <td><?= $reserva->user_id ?></td>
+                    <td><?= $reserva->acom_id ?></td>
+                    <td><?= $reserva->data_in ?></td>
+                    <td><?= $reserva->data_out ?></td>
+                    <td><?= $reserva->qtd_hospedes ?></td>
+                    <td><?= $reserva->preco ?></td>
                     <td>
-                        <a  href="ctrl_acom.php?action=editar&id=<?= $acomodacao->id ?>">Alterar</a>
-                        <a  href="ctrl_acom.php?action=deletar&id=<?= $acomodacao->id ?> " onclick="return confirm('Tem certeza de que deseja excluir o registro?');">Excluir</a>
+                        <a  href="ctrl_acom.php?action=deletar&id=<?= $reserva->id ?> " onclick="return confirm('Tem certeza de que deseja excluir o registro?');">Excluir</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

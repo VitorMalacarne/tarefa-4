@@ -24,6 +24,7 @@ if($action == 'novo') {
             
         if(!$res) {
             $view = 'form_acomodacao.php';
+            echo "Erro ao salvar acomodação";
             $message = "Erro ao salvar acomodação";
         } else{
             $message = "Salvo com sucesso";
@@ -87,6 +88,6 @@ if($view == 'list_acomodacao.php') {
     $acomodacoes = $acomodacaoDAO->getAll();
 }
 
-//require_once($view); // Abrindo uma viewS
+require_once($view); // Abrindo uma viewS
 
 ?>

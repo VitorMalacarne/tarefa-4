@@ -1,0 +1,5 @@
+<?php
+
+header 'principal.html';
+
+?>

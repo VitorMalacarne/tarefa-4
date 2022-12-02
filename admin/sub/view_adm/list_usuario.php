@@ -17,11 +17,11 @@
         <?php endif; ?>
         <nav id="mainnav">
     		<ul>
-    		    <li><a href="index.html">HOME</a></li>
-    		    <li><a href="list_acomodacao.php">Lista de acomodações</a></li>
-    		    <li><a href="list_reserva.php">Lista de reservas</a></li>
-    		    <li><a href="list_tarifa.php">Lista de tarifas</a></li>
-    		    <li><a href="list_usuario.php">Lista de usuários</a></li>
+                <li><a href="index.html">HOME</a></li>
+    		    <li><a href="ctrl_acom.php">Lista de acomodações</a></li>
+    		    <li><a href="ctrl_reserva.php">Lista de reservas</a></li>
+    		    <li><a href="ctrl_tarifa.php">Lista de tarifas</a></li>
+    		    <li><a href="ctrl_usuario.php">Lista de usuários</a></li>
     		    <li><a href="form_acomodacao.php">Formulário de acomodações</a></li>
     		    <li><a href="form_tarifa.php">Formulário de tarifas</a></li>
     		</ul>
