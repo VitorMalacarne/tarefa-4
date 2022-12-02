@@ -2,6 +2,7 @@
 
 require_once '../../conexao.php';
 require_once '../model/usuario.dao.php';
+@session_start();
 
 // Instanciar objeto DAO
 $usuarioDAO = new UsuarioDAO($pdo);
@@ -12,7 +13,7 @@ $action = @$_REQUEST['action'];
 $view = 'list_usuario.php';// View default
 echo "TESTE";
 // Decidir qual ação será tomada
-if($action == 'novo') {
+if(@$action == 'novo') {
     echo "TESTE";
     
     if(@$_POST['senha'] == @$_POST['confirmar_senha']){
@@ -20,6 +21,7 @@ if($action == 'novo') {
         $view = '../view_usuario/principal.php';
 
         $id = $usuarioDAO->getUsuarioByEmail(@$_POST['email'])->id;
+        echo $id;
         $_SESSION['id'] = $id;
         $_SESSION['nome'] = @$_POST['nome'];
 
@@ -30,15 +32,7 @@ if($action == 'novo') {
     require_once($view);
     }
 
-} else if($action == 'editar') {
-    if(@$_REQUEST['id']) {
-        $view = './../view_usario/cadastro.php';
-        $usuario = $usuarioDAO->getById($_REQUEST['id']);
-    } else {
-        $message = "A pessoa não está cadastrada";
-    }
-
-} else if($action == 'deletar') {
+} else if(@$action == 'deletar') {
     $id = @$_REQUEST['id'];
 
     if($id) {
@@ -49,7 +43,7 @@ if($action == 'novo') {
     } else 
         $message = "Informe o código da pessoa para deletar.";
     
-} else if($action == "login") {
+} else if(@$action == "login") {
     $email = @$_POST['email'];
 
     $usuario = $usuarioDAO->getUsuarioByEmail($email);
@@ -73,7 +67,7 @@ if($action == 'novo') {
         }
     }
     
-}else if($action == "logout"){
+}else if(@$action == "logout"){
     session_destroy();
     echo "efefefefe";
     header('location: ../view_usuario/principal.php');

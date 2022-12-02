@@ -25,12 +25,19 @@ FOREIGN KEY(`id_tarifa`) REFERENCES tb_tarifa(id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE `tb_tarifa` (
-`id` INT NOT NULL AUTO_INCREMENT, 
+`id` INT NOT NULL --AUTO_INCREMENT, 
 `preco` DECIMAL NOT NULL, 
 `preco_adulto` DECIMAL NOT NULL,
 `preco_crianca` DECIMAL NOT NULL, 
 PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+INSERT INTO `tb_tarifa` (`id`, `preco`, `preco_adulto`, `preco_crianca`) VALUES ('1', '1', '1', '1');
+INSERT INTO `tb_tarifa` (`id`, `preco`, `preco_adulto`, `preco_crianca`) VALUES ('2', '1', '1', '1');
+INSERT INTO `tb_tarifa` (`id`, `preco`, `preco_adulto`, `preco_crianca`) VALUES ('3', '1', '1', '1');
+INSERT INTO `tb_tarifa` (`id`, `preco`, `preco_adulto`, `preco_crianca`) VALUES ('4', '1', '1', '1');
+INSERT INTO `tb_tarifa` (`id`, `preco`, `preco_adulto`, `preco_crianca`) VALUES ('5', '1', '1', '1');
+INSERT INTO `tb_tarifa` (`id`, `preco`, `preco_adulto`, `preco_crianca`) VALUES ('6', '1', '1', '1');
 
 CREATE TABLE `tb_reserva` (
 `id` INT NOT NULL AUTO_INCREMENT, 

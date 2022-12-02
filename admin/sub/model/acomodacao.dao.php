@@ -42,32 +42,19 @@ class AcomodacaoDAO {
     }
 
     function insert($post) {
-        $tipo_acomodacao = "";
-        $tipo_apartamento = "";
-        if($post['id_tarifa']>3){
-            $tipo_acomodacao = "Luxo";
-        }else{
-            $tipo_acomodacao = "Standard";
-        }
-        if($post['id_tarifa'] % 3 == 0){
-            $tipo_apartamento = "Familia";
-        }else if($acom['id_tarifa'] % 2 == 0){
-            $tipo_apartamento = "Triplo";
-        }else{
-            $tipo_apartamento = "Duplo";
-        }
 
         $sql = "INSERT INTO tb_acomodacao (
-            qtd_camas_casal, qtd_camas_solteiro, qtd_pessoas, tipo_acomodacao, tipo_apartamento, id_tarifa) 
-            VALUES (:qtd_camas_casal,:qtd_camas_solteiro,:qtd_pessoas,:tipo_acomodacao,:tipo_apartamento,:id_tarifa)";
+            id_tarifa, qtd_camas_casal, qtd_camas_solteiro, qtd_pessoas, tipo_acomodacao, tipo_apartamento) 
+            VALUES (:id_tarifa,:qtd_camas_casal,:qtd_camas_solteiro,:qtd_pessoas,:tipo_acomodacao,:tipo_apartamento)";
         
         $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':id_tarifa', $post['id_tarifa']);
         $stmt->bindValue(':qtd_camas_casal', $post['qtd_camas_casal']);
         $stmt->bindValue(':qtd_camas_solteiro', $post['qtd_camas_solteiro']);
         $stmt->bindValue(':qtd_pessoas', ($post['qtd_camas_casal'] * 2 + $post['qtd_camas_solteiro']));
         $stmt->bindValue(':tipo_acomodacao', $tipo_acomodacao);
         $stmt->bindValue(':tipo_apartamento', $tipo_apartamento);
-        $stmt->bindValue(':tipo_apartamento', $post['id_tarifa']);
+        echo "Tá aqui";
         return $stmt->execute();
     }
 

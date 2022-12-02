@@ -7,23 +7,22 @@
 	</head>
 	<body>
 		<header>
-			<h1>POUSADA DAS CAPIVARAS - Adminidnejnejncstração</h1>
-			<h2></h2>
+			<h1>POUSADA DAS CAPIVARAS - Administração</h1>
+			<h2>Formulário de acomodação</h2>
 		</header>
 		<div id="maindiv">
 			<nav id="mainnav">
     		    <ul>
     		        <li><a href="index.html">HOME</a></li>
     		        <li><a href="ctrl_acom.php">Lista de acomodações</a></li>
-    		        <li><a href="ctrl_reserva.php">Lista de reservas</a></li>
+    		        <li><a href="ctrl_reserva.php?action=listar">Lista de reservas</a></li>
     		        <li><a href="ctrl_tarifa.php">Lista de tarifas</a></li>
     		        <li><a href="ctrl_usuario.php">Lista de usuários</a></li>
-    		        <li><a href="form_acomodacao.php">Formulário de acomodações</a></li>
-    		        <li><a href="form_tarifa.php">Formulário de tarifas</a></li>
+    		        <li><a href="form_acomodacao.php" class="active">Formulário de acomodações</a></li>
     		    </ul>
     		</nav>
 			<div class="phantomdiv"></div>
-			<main>
+			<div id="maindiv"><main>
 				<h2>Cadastro de acomodações</h2>
 				<form action="ctrl_acom.php?action=novo" method="post">
             	<input type="hidden" name="id" value="<?= @$acomodacao->id ?>">
@@ -42,20 +41,7 @@
 						<option value="2">Duas</option>
 						<option value="3">Três</option>
 						</select><br>
-						<label>Tipo</label>
-		                <select name="id_tarifa">
-		                    <optgroup label="Standard">
-		                        <option <?= (@$acomodacao->id_tarifa == 1)? 'selected' : '' ?> value="1">S-Duplo</option>
-		                        <option <?= (@$acomodacao->id_tarifa == 2)? 'selected' : '' ?> value="2">S-Triplo</option>
-		                        <option <?= (@$acomodacao->id_tarifa == 3)? 'selected' : '' ?> value="3">S-Família</option>
-		                    </optgroup>
-		                    <optgroup label="Luxo">
-		                        <option <?= (@$acomodacao->id_tarifa == 4)? 'selected' : '' ?> value="4">L-Duplo</option>
-		                        <option <?= (@$acomodacao->id_tarifa == 5)? 'selected' : '' ?> value="5">L-Triplo</option>
-		                        <option <?= (@$acomodacao->id_tarifa == 6)? 'selected' : '' ?> value="6">L-Família</option>
-		                    </optgroup>
-		                </select>
-						<!--<label for="tipo_acomodacao">Tipo de acomodação:</label>
+						<label for="tipo_acomodacao">Tipo de acomodação:</label>
 						<select name="tipo_acomodacao">
 						<option value="" disabled selected hidden>Selecione</option>
 						<option value="standart">Standart</option>
@@ -67,13 +53,13 @@
 						<option value="dupla">Dupla</option>
 						<option value="tripla">Tripla</option>
 						<option value="familia">Família</option>
-						</select><br>-->
+						</select><br>-
 					</fieldset>
 					
 					<button type="submit">Adicionar</button>
 					<a href="ctrl_acom.php">Cancelar</a>
 				</form>
-			</main>
+			</main></div>
 		</div>
 		<footer>
 			<hr>

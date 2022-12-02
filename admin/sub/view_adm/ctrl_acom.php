@@ -35,7 +35,7 @@ if($action == 'novo') {
         $view = 'form_acomodacao.php';
         $message = "Falha ao salvar acomodação. Detalhes do erro: " . $th->getMessage(); 
     }
-    header('location:'.$view);
+    //header('location:'.$view);
 
 } else if($action == 'editar') {
     if(@$_REQUEST['id']) {
@@ -92,6 +92,6 @@ if($view == 'list_acomodacao.php') {
     require_once($view);
 }
 
-require_once($view); // Abrindo uma viewS
+//require_once($view); // Abrindo uma viewS
 
 ?>

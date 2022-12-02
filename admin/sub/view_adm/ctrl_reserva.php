@@ -47,12 +47,15 @@ if($action == 'novo') {
             $message = "Nenhuma reserva foi deletada.";
     } else 
         $message = "Informe o código da reserva para deletar.";   
-}
+} else
 
 //if($view == 'list_reserva.php') {
     // Buscar as pessoas no Banco de Dados
-    $reservas = $reservaDAO->getAll();
+$reservas = $reservaDAO->getAll();
 //}
+
+if($action == 'listar')
+    require_once('list_reserva.php');
 
 //require_once($view); // Abrindo uma view
 ?>

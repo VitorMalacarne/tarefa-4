@@ -8,6 +8,7 @@
     // Recebe a ação
     $action = @$_REQUEST['action'];
     $view = 'list_tarifa.php';
+    
 
     if($action == "novo"){
         
@@ -15,6 +16,8 @@
         try {
             $res;
             if(!@$_REQUEST['id']){
+                echo "Esse é o id".$_REQUEST['id'];
+                require_once('swsw');
                 $res = $tarifaDAO->insert(@$_POST);
             }else{
                 $res = $tarifaDAO->update(@$_POST);
@@ -32,7 +35,6 @@
             $view = 'form_acomodacao.php';
             $message = "Falha ao salvar acomodação. Detalhes do erro: " . $th->getMessage(); 
         }    
-        header('location:'.$view);
     
     }else if($action == "deletar"){
         $view = 'list_tarifa.php';
@@ -55,7 +57,9 @@
     }
 
     if($view == 'list_tarifa.php'){
+        echo $view;
         $tarifas = $tarifaDAO->getAll();
     }
+
     require_once($view);
 ?>
