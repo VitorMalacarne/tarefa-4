@@ -68,7 +68,7 @@
         
         </form>
         <h4>Não tem cadastro?<h4>
-        <a href="cadastro.html" id="botao">Cadastrar</a>
+        <a href="cadastro.html" class="botao" >Cadastrar</a>
 
     </main>
 
