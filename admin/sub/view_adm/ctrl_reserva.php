@@ -1,5 +1,5 @@
 <?php
-//  PAREI AQUIIIIIIII
+
 require_once '../../conexao.php';
 require_once '../model/reserva.dao.php';
 @session_start();

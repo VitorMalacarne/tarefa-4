@@ -26,10 +26,20 @@ FOREIGN KEY(`id_tarifa`) REFERENCES tb_tarifa(id)
 
 CREATE TABLE `tb_tarifa` (
 `id` INT NOT NULL AUTO_INCREMENT, 
-`tipo_acomodacao` VARCHAR(15) NOT NULL, 
-`preco_acomodacao` FLOAT NOT NULL, 
+`preco` DECIMAL NOT NULL, 
+`preco_adulto` DECIMAL NOT NULL,
+`preco_crianca` DECIMAL NOT NULL, 
 PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+CREATE TABLE tb_tarifa (
+    id int(11) NOT NULL, --AUTO_INCREMENT
+    preco DECIMAL DEFAULT NULL,
+    precoC DECIMAL DEFAULT NULL,
+    precoA DECIMAL DEFAULT NULL,
+    PRIMARY KEY(id)
+);
+
 
 CREATE TABLE `tb_reserva` (
 `id` INT NOT NULL AUTO_INCREMENT, 

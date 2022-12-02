@@ -7,7 +7,6 @@ require_once '../model/acomodacao.dao.php';
 $acomodacaoDAO = new AcomodacaoDAO($pdo);
 
 // Recebe a ação
-
 $action = @$_REQUEST['action'];
 $view = 'list_acomodacao.php';// View default
 
@@ -47,6 +46,7 @@ if($action == 'novo') {
 
 } else if($action == 'deletar') {
     
+    $view = '../view_adm/list_acom.php';
     $id = @$_REQUEST['id'];
     if($id) {
         if($acomodacaoDAO->delete($id) > 0)
@@ -56,8 +56,7 @@ if($action == 'novo') {
     } else 
         $message = "Informe o código da acomodação para deletar.";
 
-    $ra = $acomodacaoDAO->delete($id);
-    $view = '../view_adm/list_acom.php';
+    //$ra = $acomodacaoDAO->delete($id);
     header('location:'.$view);
 
 } else if($action == "procurar"){
