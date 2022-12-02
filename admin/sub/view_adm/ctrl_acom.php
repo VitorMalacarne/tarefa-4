@@ -15,8 +15,9 @@ if($action == 'novo') {
     $view = 'list_acomodacao.php';
     try {
         $res;
-        if( !@$_REQUEST['id']){ // Insert
+        if(!@$_REQUEST['id']){ // Insert
             $res = $acomodacaoDAO->insert(@$_POST);
+            echo "ASFWEADGDGFFAD";
         }
         else // Update
             $res = $acomodacaoDAO->update(@$_POST);
@@ -86,6 +87,6 @@ if($view == 'list_acomodacao.php') {
     $acomodacoes = $acomodacaoDAO->getAll();
 }
 
-require_once($view); // Abrindo uma viewS
+//require_once($view); // Abrindo uma viewS
 
 ?>
