@@ -5,14 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pessoa</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Tarifas</title>
+    <link rel="stylesheet" type="text/css" href="../../../style.css">
 </head>
 
 <body>
+    <nav id="mainnav">
+        <ul>
+    	    <li><a href="index.html">HOME</a></li>
+	        <li><a href="list_acomodacao.php">Lista de acomodações</a></li>
+    		<li><a href="list_reserva.php">Lista de reservas</a></li>
+            <li><a href="list_tarifa.php">Lista de tarifas</a></li>
+    		<li><a href="list_usuario.php">Lista de usuários</a></li>
+            <li><a href="form_acomodacao.php">Formulário de acomodações</a></li>
+    		<li><a href="form_tarifa.php">Formulário de tarifas</a></li>
+    	 </ul>
+    </nav>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">ADM MODE</a>
