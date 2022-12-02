@@ -8,31 +8,25 @@
 	<body>
 		<header>
 			<h1>POUSADA DAS CAPIVARAS - Administração</h1>
-			<nav id="headnav">
-				<ul>
-				<li><a href="index.html">HOME</a></li>
-                <li><a href="list.php">Usuários</a></li>
-                <li><a href="../../conexao.php">Conexão</a></li>
-                <li><a href="../view_usuario/cadastro.html">Cadastro</a></li>
-                <li><a href="form_acomodacao.php" class="active">Acomodações</a></li>
-				</ul>
-			</nav>
+			<h2></h2>
 		</header>
 		<div id="maindiv">
 			<nav id="mainnav">
-				<ul>
-				<li><a href="index.html">HOME</a></li>
-                <li><a href="list.php">Usuários</a></li>
-                <li><a href="../../conexao.php">Conexão</a></li>
-                <li><a href="../view_usuario/cadastro.html">Cadastro</a></li>
-                <li><a href="form_acomodacao.php" class="active">Acomodações</a></li>
-				</ul>
-			</nav>
+    		    <ul>
+    		        <li><a href="index.html">HOME</a></li>
+    		        <li><a href="list_acomodacao.php">Lista de acomodações</a></li>
+    		        <li><a href="list_reserva.php">Lista de reservas</a></li>
+    		        <li><a href="list_tarifa.php">Lista de tarifas</a></li>
+    		        <li><a href="list_usuario.php">Lista de usuários</a></li>
+    		        <li><a href="form_acomodacao.php">Formulário de acomodações</a></li>
+    		        <li><a href="form_tarifa.php">Formulário de tarifas</a></li>
+    		    </ul>
+    		</nav>
 			<div class="phantomdiv"></div>
 			<main>
 				<h2>Cadastro de acomodações</h2>
 				<form action="ctrl_acom.php" method="post">
-				<input type="hidden" name="action" value="salvar">
+				<input type="hidden" name="action" value="novo">
             	<input type="hidden" name="id" value="<?= @$acomodacao->id ?>">
 					<fieldset>
 						<legend>Acomodações</legend>

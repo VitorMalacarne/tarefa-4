@@ -1,67 +1,88 @@
-<?php
-require_once('../controller/conexao.php');
-    class TarifaDAO{
-        private $pdo;
+<!DOCTYPE html>
+<html lang="en">
 
-        function __construct($pdo){
-            $this->pdo = $pdo;
-        }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoa</title>
 
-        function createTarifa($tarifa){
-            $sql = 'INSERT INTO tb_tarifa (
-                preco, precoC, precoA)
-                VALUES (:preco, :precoC, :precoA);';
-                
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue(':preco', $tarifa['preco']);
-            $stmt->bindValue(':precoC', $tarifa['precoC']);
-            $stmt->bindValue(':precoA', $tarifa['precoA']);
-            
-            return $stmt->execute();
-        }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 
-        function getAll(){
-            $sql = "SELECT * FROM tb_tarifa";
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute();
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ADM MODE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="lista_users.php">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="list_acom.php">Acomodações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="list_tarifas.php">Tarifas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="list_reservas.php">Reservas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-            return $stmt->fetchAll(PDO::FETCH_CLASS);
-        }
+    <div class="container">
+        <h3>Nova tarifa</h3>
 
-        function delete($id){
-            $sql = "DELETE FROM tb_tarifa WHERE id = :id";
 
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue(':id', $id);
+        <!-- <?php if (@$message) : ?>
 
-            $stmt->execute();
+            <div class="toast fade show align-items-center text-bg-warning border-0 mx-auto my-3" role="alert" aria-live="polite" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        <?= @$message ?>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
 
-            return $stmt->rowCount();
-        }
+        <?php endif; ?> -->
 
-        function getTarifaById($id){
-            $sql = "SELECT * FROM tb_tarifa WHERE id = ?";
+        <form action="../controller/controller.tar.php" method="POST">
+            <input type="hidden" name="action" value="cadastrar">
+            <input type="hidden" name="id" value="<?= @$tarifa->id ?>">
 
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(1, $id);
+            <div>
+                <label>Preço</label>
+                <input required type="number" name="preco" value="<?= @$tarifa->preco ?>" class="form-control">
+            </div>
 
-            $stmt->execute();
+            <div>
+                <label>Preço adicional de criança</label>
+                <input required type="number" name="precoC" value="<?= @$tarifa->precoC ?>" class="form-control">
+            </div>
 
-            return $stmt->fetchObject();
-        }
+            <div>
+                <label>Preço adicional de adulto</label>
+                <input required type="number" name="precoA" value="<?= @$tarifa->precoA ?>" class="form-control">
+            </div>
 
-        function update($tarifa){
-            $sql = "UPDATE tb_tarifa
-            SET preco = :preco, precoC = :precoC, precoA = :precoA
-            WHERE id = :id";
 
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue(':preco', $tarifa['preco']);
-            $stmt->bindValue(':precoC', $tarifa['precoC']);
-            $stmt->bindValue(':precoA', $tarifa['precoA']);
-            $stmt->bindValue(':id', $tarifa['id']);
+            <div>
+                <button class="btn btn-success mt-3" type="submit">Salvar</button>
+                <a href="../view_adm/list_tarifas.php" class="btn btn-light mt-3 ms-1">Cancelar</a>
+            </div>
 
-            return $stmt->execute();
-        }
-    }
-?>
+        </form>
+    </div>
+</body>
+
+</html>
