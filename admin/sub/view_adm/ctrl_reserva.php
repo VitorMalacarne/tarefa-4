@@ -49,10 +49,10 @@ if($action == 'novo') {
         $message = "Informe o código da reserva para deletar.";   
 }
 
-if($view == 'list_reserva.php') {
+//if($view == 'list_reserva.php') {
     // Buscar as pessoas no Banco de Dados
     $reservas = $reservaDAO->getAll();
-}
+//}
 
-require_once($view); // Abrindo uma view
+//require_once($view); // Abrindo uma view
 ?>

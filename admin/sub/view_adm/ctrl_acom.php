@@ -2,14 +2,14 @@
 
 require_once '../../conexao.php';
 require_once '../model/acomodacao.dao.php';
-
+echo "Outro teste";
 // Instanciar objeto DAO
 $acomodacaoDAO = new AcomodacaoDAO($pdo);
 
 // Recebe a ação
 $action = @$_REQUEST['action'];
 $view = 'list_acomodacao.php';// View default
-
+echo $action;
 // Decidir qual ação será tomada
 if($action == 'novo') {
     $view = 'list_acomodacao.php';
@@ -62,8 +62,10 @@ if($action == 'novo') {
     header('location:'.$view);
 
 } else if($action == "procurar"){
+    echo "DEntro de procurar e antes de";
     require_once("ctrl_reserva.php");
     $acomodacoes = $acomodacaoDAO->getByAllInfo(@$_POST);
+    echo "Dentro de procurar de ctrl_acom";
     $dataEntrada = $_POST['data_entrada'];
     $dataSaida = $_POST['data_saida'];
 
@@ -79,7 +81,7 @@ if($action == 'novo') {
             }
         }
     }
-    $view = "../view_ususario/reserva.php";
+    $view = "../view_usuario/reserva.php";
     require_once($view);
 }
 

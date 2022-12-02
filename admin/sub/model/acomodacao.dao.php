@@ -26,8 +26,9 @@ class AcomodacaoDAO {
     }
 
     function getByAllInfo($post){
+        echo "Dentro de acomodacao.dao";
 
-        $tipo_acomodacao = $post['tipo'];
+        $tipo_acomodacao = $post['tipo_acomodacao'];
 
         $sql = "SELECT * FROM tb_acomodacao WHERE qtd_pessoas >= :qtd_pessoas AND tipo_acomodacao = :tipo_acomodacao";
 

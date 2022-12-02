@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,7 +31,7 @@
 			</nav>
 			<div class="phantomdiv"></div>
 			<main>
-				<form action="../view_adm/ctrl_usuario.php?" method="post">
+				<form action="../view_adm/ctrl_usuario.php?action=novo" method="post">
 					<fieldset>
 						<legend>Cadastro</legend>
 						<label for="nome">Nome Completo</label>
@@ -43,7 +46,7 @@
 		                <input  type="password" name="confirmar_senha" placeholder="*********" autocomplete="off" required>
 					</fieldset>
 					
-					<input type="submit" value="novo">
+					<input type="submit" value="Fazer cadastro">
 					
 				</form>
 				<h4>Já tem cadastro?</h4>

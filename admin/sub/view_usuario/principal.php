@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,19 +25,19 @@
         	<?php endif; ?>
 			<nav id="headnav">
 				<ul>
-					<li><a href="principal.html" class="active">HOME</a></li>
+					<li><a href="principal.php" class="active">HOME</a></li>
 					<li><a href="reserva.php">RESERVA</a></li>
-					<li><a href="acomodacoes.html">ACOMODAÇÕES</a></li>
+					<li><a href="acomodacoes.php">ACOMODAÇÕES</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div id="maindiv">
 			<nav id="mainnav">
 				<ul>
-					<li><a href="principal.html" class="active">A Pousada</a></li>
+					<li><a href="principal.php" class="active">A Pousada</a></li>
 					<li><a href="reserva.php">Reserva</a></li>
-					<li><a href="acomodacoes.html">Acomodações</a></li>
-					<li><a href="faleconosco.html">Fale Conosco</a></li>
+					<li><a href="acomodacoes.php">Acomodações</a></li>
+					<li><a href="faleconosco.php">Fale Conosco</a></li>
 				</ul>
 			</nav>
 			<div class="phantomdiv"></div>

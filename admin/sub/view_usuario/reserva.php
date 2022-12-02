@@ -1,5 +1,5 @@
 <?php
-@session_start();
+	@session_start();
 ?>
 
 <!DOCTYPE html>
@@ -28,16 +28,16 @@
 		<div id="maindiv">
 			<nav id="mainnav">
 				<ul>
-					<li><a href="principal.html">A Pousada</a></li>
-					<li><a href="reserva.html" class="active">Reserva</a></li>
-					<li><a href="acomodacoes.html">Acomodações</a></li>
-					<li><a href="faleconosco.html">Fale Conosco</a></li>
+					<li><a href="principal.php">A Pousada</a></li>
+					<li><a href="reserva.php" class="active">Reserva</a></li>
+					<li><a href="acomodacoes.php">Acomodações</a></li>
+					<li><a href="faleconosco.php">Fale Conosco</a></li>
 				</ul>
 			</nav>
 			<div class="phantomdiv"></div>
 			<main>
 				<h2>Reserva online</h2>
-				<form action="../view_adm/ctrl_acom.php?procurar" method="post">
+				<form action="../view_adm/ctrl_acom.php?action=procurar" method="post">
 					<fieldset>
 						<legend>Dados da reserva</legend>
 						<label for="daen">Data de entrada</label><br>
@@ -49,7 +49,7 @@
 						<label for="quancr">Crianças</label><br>
 						<input type="number" name="qtd_criancas" min="0" max="4" step="1" value="0" autocomplete="off"required><br>
 						<label for="acom">Acomodação</label><br>
-						<select name="acom" autocomplete="off"required>
+						<select name="tipo_acomodacao" autocomplete="off"required>
 							<option value="" disabled selected hidden>Selecione</option>
 							<option value="standart">Standart</option>
 							<option value="luxo">Luxo</option>

@@ -64,7 +64,7 @@
             <label for="senha">Senha</label>
             <input type="password" name="senha" placeholder="*********" autocomplete="off" required><br>
             </fieldset>
-            <input type="submit" name="" id="button" value="Fazer cadastro">
+            <input type="submit" name="" id="button" value="Logar">
         
         </form>
         <h4>Não tem cadastro?<h4>
