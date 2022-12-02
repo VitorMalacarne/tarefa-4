@@ -1,3 +1,7 @@
+<?php
+@session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,14 +12,18 @@
 	<body>
 		<header>
 			<h1>POUSADA DAS CAPIVARAS</h1>
-			<nav id="headnav">
-				<ul>
-					<li><a href="principal.html">HOME</a></li>
-					<li><a href="reserva.html" class="active">RESERVA</a></li>
-					<li><a href="acomodacoes.html">ACOMODAÇÕES</a></li>
-					<li><a href="cadastro.html">CADASTRO</a></li>
-				</ul>
-			</nav>
+			<?php if(empty($_SESSION)): ?>
+            <ul>
+                <li><a href="login.php">Logar</a></li>
+                <li><a href="cadastro.php">Cadastrar</a></li>
+            </ul>
+        <?php endif; ?>
+        <?php if(empty($_SESSION) !== true): ?>
+            <ul>
+                <li><p>Olá, <?= $_SESSION['nome'] ?></p></li>
+                <li><a href="../view_adm/ctrl_usuario.php?action=logout">Sair</a></li>
+            </ul>
+        <?php endif; ?>
 		</header>
 		<div id="maindiv">
 			<nav id="mainnav">
@@ -29,34 +37,26 @@
 			<div class="phantomdiv"></div>
 			<main>
 				<h2>Reserva online</h2>
-				<form action="ctrl_reserva.php" method="post">
-					<fieldset>
-						<legend>Responsávlklklklklel</legend>
-						<label for="nome">Nome Completo</label>
-						<input type="text" name="nome" placeholder="João Da Silva" autocomplete="off" required><br>
-						<label for="email">E-mail</label>
-						<input type="text" name="email" placeholder="email@mail.com" autocomplete="off"><br>
-						<label for="fone">Telefone</label>
-						<input type="text" name="fone" placeholder="(XX) XXXXX-XXXX" autocomplete="off"><br>
-					</fieldset>
+				<form action="../view_adm/ctrl_acom.php" method="post">
 					<fieldset>
 						<legend>Dados da reserva</legend>
 						<label for="daen">Data de entrada</label><br>
-						<input type="date" name="daen" placeholder="dd/mm/aaaa" autocomplete="off" required><br>
+						<input type="date" name="data_entrada" placeholder="dd/mm/aaaa" autocomplete="off" required><br>
 						<label for="dasa">Data de saída</label><br>
-						<input type="date" name="dasa" placeholder="dd/mm/aaaa" autocomplete="off" required><br>
+						<input type="date" name="data_saida" placeholder="dd/mm/aaaa" autocomplete="off" required><br>
 						<label for="quanad">Adultos</label><br>
-						<input type="number" name="quanad" min="1" max="4" step="1" value="1" autocomplete="off" required><br>
+						<input type="number" name="qtd_adultos" min="1" max="4" step="1" value="1" autocomplete="off" required><br>
 						<label for="quancr">Crianças</label><br>
-						<input type="number" name="quancr" min="0" max="4" step="1" value="0" autocomplete="off"required><br>
+						<input type="number" name="qtd_criancas" min="0" max="4" step="1" value="0" autocomplete="off"required><br>
 						<label for="acom">Acomodação</label><br>
 						<select name="acom" autocomplete="off"required>
 							<option value="" disabled selected hidden>Selecione</option>
 							<option value="standart">Standart</option>
 							<option value="luxo">Luxo</option>
+							<option value="todos">Todos</option>
 						</select>
 					</fieldset><br>
-					<input type="submit" value="Reservar"> 
+					<input type="submit" value="procurar"> 
 				</form>
 			</main>
 			<aside>

@@ -1,5 +1,0 @@
-<?php
-
-header 'principal.html';
-
-?>
