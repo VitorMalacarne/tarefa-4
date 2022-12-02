@@ -10,19 +10,19 @@
 			<h1>POUSADA DAS CAPIVARAS</h1>
 			<nav id="headnav">
 				<ul>
-					<li><a href="principal.html">HOME</a></li>
+					<li><a href="principal.php">HOME</a></li>
 					<li><a href="reserva.php">RESERVA</a></li>
-					<li><a href="acomodacoes.html" class="active">ACOMODAÇÕES</a></li>
+					<li><a href="acomodacoes.php" class="active">ACOMODAÇÕES</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div id="maindiv">
 			<nav id="mainnav">
 				<ul>
-					<li><a href="principal.html">A Pousada</a></li>
+					<li><a href="principal.php">A Pousada</a></li>
 					<li><a href="reserva.php">Reserva</a></li>
-					<li><a href="acomodacoes.html" class="active">Acomodações</a></li>
-					<li><a href="faleconosco.html">Fale Conosco</a></li>
+					<li><a href="acomodacoes.php" class="active">Acomodações</a></li>
+					<li><a href="faleconosco.php">Fale Conosco</a></li>
 				</ul>
 			</nav>
 			<div class="phantomdiv"></div>

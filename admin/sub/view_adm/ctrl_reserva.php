@@ -10,7 +10,7 @@ $reservaDAO = new ReservaDAO($pdo);
 // Recebe a ação
 
 $action = @$_REQUEST['action'];
-$view = 'list_reserva.php';// View default
+//$view = 'list_reserva.php';// View default
 
 // Decidir qual ação será tomada
 if($action == 'novo') {

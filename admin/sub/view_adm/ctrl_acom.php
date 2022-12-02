@@ -62,7 +62,7 @@ if($action == 'novo') {
     header('location:'.$view);
 
 } else if($action == "procurar"){
-    require_once("ctrl_acom.php");
+    require_once("ctrl_reserva.php");
     $acomodacoes = $acomodacaoDAO->getByAllInfo(@$_POST);
     $dataEntrada = $_POST['data_entrada'];
     $dataSaida = $_POST['data_saida'];
@@ -79,7 +79,7 @@ if($action == 'novo') {
             }
         }
     }
-    $view = "../view_ususario/reserva.html";
+    $view = "../view_ususario/reserva.php";
     require_once($view);
 }
 
@@ -88,6 +88,6 @@ if($view == 'list_acomodacao.php') {
     $acomodacoes = $acomodacaoDAO->getAll();
 }
 
-require_once($view); // Abrindo uma viewS
+//require_once($view); // Abrindo uma viewS
 
 ?>

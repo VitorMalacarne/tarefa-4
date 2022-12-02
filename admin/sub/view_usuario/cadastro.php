@@ -10,25 +10,25 @@
 			<h1>POUSADA DAS CAPIVARAS - Cadastro de usuário</h1>
 			<nav id="headnav">
 				<ul>
-					<li><a href="principal.html">HOME</a></li>
+					<li><a href="principal.php">HOME</a></li>
 					<li><a href="reserva.php">RESERVA</a></li>
-					<li><a href="acomodacoes.html">ACOMODAÇÕES</a></li>
-					<li><a href="cadastro.html" class="active">CADASTRO</a></li>
+					<li><a href="acomodacoes.php">ACOMODAÇÕES</a></li>
+					<li><a href="cadastro.php" class="active">CADASTRO</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div id="maindiv">
 			<nav id="mainnav">
 				<ul>
-					<li><a href="principal.html">A Pousada</a></li>
+					<li><a href="principal.php">A Pousada</a></li>
 					<li><a href="reserva.php">Reserva</a></li>
-					<li><a href="acomodacoes.html">Acomodações</a></li>
-					<li><a href="faleconosco.html">Fale Conosco</a></li>
+					<li><a href="acomodacoes.php">Acomodações</a></li>
+					<li><a href="faleconosco.php">Fale Conosco</a></li>
 				</ul>
 			</nav>
 			<div class="phantomdiv"></div>
 			<main>
-				<form action="../view_adm/ctrl_usuario.php?action=salvar" method="post">
+				<form action="../view_adm/ctrl_usuario.php?" method="post">
 					<fieldset>
 						<legend>Cadastro</legend>
 						<label for="nome">Nome Completo</label>
@@ -39,9 +39,11 @@
 						<input type="tel" name="telefone" placeholder="(XX) XXXXX-XXXX" autocomplete="off" required><br>
                         <label for="senha">Senha</label>
                         <input type="password" name="senha" placeholder="*********" autocomplete="off" required><br>
+						<label for="">Confirmar senha</label>
+		                <input  type="password" name="confirmar_senha" placeholder="*********" autocomplete="off" required>
 					</fieldset>
 					
-					<input type="submit" value="Cadastrar">
+					<input type="submit" value="novo">
 					
 				</form>
 				<h4>Já tem cadastro?</h4>

@@ -8,6 +8,18 @@
 	<body>
 		<header>
 			<h1>POUSADA DAS CAPIVARAS</h1>
+			<?php if(empty($_SESSION)): ?>
+        	    <ul>
+        	        <li><a href="login.php">Logar</a></li>
+        	        <li><a href="cadastro.php">Cadastrar</a></li>
+        	    </ul>
+        	<?php endif; ?>
+        	<?php if(empty($_SESSION) !== true): ?>
+        	    <ul>
+        	        <li><p>Olá, <?= $_SESSION['nome'] ?></p></li>
+        	        <li><a href="../view_adm/ctrl_usuario.php?action=logout">Sair</a></li>
+        	    </ul>
+        	<?php endif; ?>
 			<nav id="headnav">
 				<ul>
 					<li><a href="principal.html" class="active">HOME</a></li>

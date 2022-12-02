@@ -16,7 +16,7 @@ if($action == 'novo') {
     
     if(@$_POST['senha'] == @$_POST['confirmar_senha']){
         $pessoaDAO->insert(@$_POST);
-        $view = '../view_user/index.php';
+        $view = '../view_usuario/principal.php';
 
         $id = $pessoaDAO->getUsuarioByEmail(@$_POST['email'])->id;
         $_SESSION['id'] = $id;

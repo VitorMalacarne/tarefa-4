@@ -37,7 +37,7 @@
 			<div class="phantomdiv"></div>
 			<main>
 				<h2>Reserva online</h2>
-				<form action="../view_adm/ctrl_acom.php" method="post">
+				<form action="../view_adm/ctrl_acom.php?procurar" method="post">
 					<fieldset>
 						<legend>Dados da reserva</legend>
 						<label for="daen">Data de entrada</label><br>
@@ -58,6 +58,39 @@
 					</fieldset><br>
 					<input type="submit" value="procurar"> 
 				</form>
+				<div>
+            <h4>Acomodações encontradas</h4>
+            <!-- comentario -->
+            <?php if(empty($acomodacoes)): ?>
+                <div class = "nulo">
+                    <p>Nenhuma acomodação encontrada dentro das condicões!</p>
+                </div>
+            <?php else: ?>
+                <?php foreach($acomodacoes as $index => $acomodacao): ?>
+                    <div class="card">
+                        <ul>
+                            <li>
+                                <p><?= @$acomodacao->tipo_acomodacao ?></p>
+                                
+                            </li>
+                            <li>
+                                <p><?= @$acomodacao->tipo_apartamento ?></p>
+                                
+                            </li>
+                            <li>
+                                <p>2 camas de solteiro</p>
+                            </li>
+                        </ul>
+                        <form action="../view_adm/ctrl_reserva.php?action=novo&qtd_adultos=<?= @$_REQUEST['qtd_adultos']?>&qtd_criancas=<?= @$_REQUEST['qtd_criancas']?>&data_entrada=<?= @$_REQUEST['data_entrada']?>&data_saida=<?= @$_REQUEST['data_saida']?>" method="post">
+                            <input type="hidden" name="id_acomodacao" value="<?= $acomodacao->id ?>">
+                            <input type="hidden" name="id_tarifa" value="<?= @$acomodacao->id_tarifa ?>">
+                            <input type="submit" value="Reservar">
+                        </form>
+                        
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
 			</main>
 			<aside>
 				<p><big><b>Nossos<br>parceiros</b></big></p>
