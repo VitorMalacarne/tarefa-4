@@ -86,10 +86,12 @@ if($action == 'novo') {
 }
 
 if($view == 'list_acomodacao.php') {
+    echo "dentro";
     // Buscar as pessoas no Banco de Dados
     $acomodacoes = $acomodacaoDAO->getAll();
+    require_once($view);
 }
 
-//require_once($view); // Abrindo uma viewS
+require_once($view); // Abrindo uma viewS
 
 ?>

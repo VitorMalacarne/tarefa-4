@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<header>
-			<h1>POUSADA DAS CAPIVARAS - Administração</h1>
+			<h1>POUSADA DAS CAPIVARAS - Adminidnejnejncstração</h1>
 			<h2></h2>
 		</header>
 		<div id="maindiv">
@@ -25,8 +25,7 @@
 			<div class="phantomdiv"></div>
 			<main>
 				<h2>Cadastro de acomodações</h2>
-				<form action="ctrl_acom.php" method="post">
-				<input type="hidden" name="action" value="novo">
+				<form action="ctrl_acom.php?action=novo" method="post">
             	<input type="hidden" name="id" value="<?= @$acomodacao->id ?>">
 					<fieldset>
 						<legend>Acomodações</legend>
@@ -43,7 +42,20 @@
 						<option value="2">Duas</option>
 						<option value="3">Três</option>
 						</select><br>
-						<label for="tipo_acomodacao">Tipo de acomodação:</label>
+						<label>Tipo</label>
+		                <select name="id_tarifa">
+		                    <optgroup label="Standard">
+		                        <option <?= (@$acomodacao->id_tarifa == 1)? 'selected' : '' ?> value="1">S-Duplo</option>
+		                        <option <?= (@$acomodacao->id_tarifa == 2)? 'selected' : '' ?> value="2">S-Triplo</option>
+		                        <option <?= (@$acomodacao->id_tarifa == 3)? 'selected' : '' ?> value="3">S-Família</option>
+		                    </optgroup>
+		                    <optgroup label="Luxo">
+		                        <option <?= (@$acomodacao->id_tarifa == 4)? 'selected' : '' ?> value="4">L-Duplo</option>
+		                        <option <?= (@$acomodacao->id_tarifa == 5)? 'selected' : '' ?> value="5">L-Triplo</option>
+		                        <option <?= (@$acomodacao->id_tarifa == 6)? 'selected' : '' ?> value="6">L-Família</option>
+		                    </optgroup>
+		                </select>
+						<!--<label for="tipo_acomodacao">Tipo de acomodação:</label>
 						<select name="tipo_acomodacao">
 						<option value="" disabled selected hidden>Selecione</option>
 						<option value="standart">Standart</option>
@@ -55,7 +67,7 @@
 						<option value="dupla">Dupla</option>
 						<option value="tripla">Tripla</option>
 						<option value="familia">Família</option>
-						</select><br>
+						</select><br>-->
 					</fieldset>
 					
 					<button type="submit">Adicionar</button>
