@@ -17,10 +17,9 @@
         <nav id="headnav">
         <?php if(empty($_SESSION)): ?>
             <ul>
-            <li><a href="principal.html">HOME</a></li>
-		    <li><a href="admin/sub/view/reserva.html">RESERVA</a></li>
-	        <li><a href="acomodacoes.html">ACOMODAÇÕES</a></li>
-             <li><a href="cadastro.html">CADASTRO</a></li>
+                <li><a href="principal.php">HOME</a></li>
+				<li><a href="reserva.php">RESERVA</a></li>
+				<li><a href="acomodacoes.php" class="active">ACOMODAÇÕES</a></li>
             </ul>
         <?php endif; ?>
         <?php if(empty($_SESSION) !== true): ?>
@@ -34,10 +33,10 @@
 
     <nav id="mainnav">
         <ul>
-        <li><a href="principal.html">A Pousada</a></li>
-		<li><a href="admin/sub/view/reserva.html">Reserva</a></li>
-		<li><a href="acomodacoes.html">Acomodações</a></li>
-		<li><a href="faleconosco.html">Fale Conosco</a></li>
+        <li><a href="principal.php">A Pousada</a></li>
+		<li><a href="reserva.php">Reserva</a></li>
+		<li><a href="acomodacoes.php">Acomodações</a></li>
+		<li><a href="faleconosco.php">Fale Conosco</a></li>
         </ul>
     </nav>
 
@@ -49,14 +48,13 @@
     <main>
 
     <?php if (@$message) : ?>
-    <div class="alert alert-warning" role="alert">
+    <div role="alert">
         <?= @$message ?> 
     </div>  
     
     <?php endif; ?>
 
-
-        <form action="../view_adm/ctrl_usuario.php" method="post">
+        <form action="../view_adm/ctrl_usuario.php?action=login" method="post">
             <fieldset title="">
             <legend>Login</legend>
             <label for="email">E-mail</label>

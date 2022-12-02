@@ -8,6 +8,7 @@ CREATE TABLE `tb_usuario` (
 `email` VARCHAR(70) NOT NULL, 
 `senha` VARCHAR(100) NOT NULL, 
 `telefone` VARCHAR(20) NOT NULL, 
+`perfil` varchar(255) DEFAULT NULL,
 PRIMARY KEY (`id`),
 UNIQUE(`email`)
 ) ENGINE = InnoDB;
@@ -20,7 +21,7 @@ CREATE TABLE `tb_acomodacao` (
 `qtd_pessoas` INT NOT NULL,
 `tipo_apartamento` VARCHAR(10) NOT NULL, 
 `tipo_acomodacao` VARCHAR(15) NOT NULL, 
-PRIMARY KEY (`id`),
+PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
 CREATE TABLE `tb_tarifa` (

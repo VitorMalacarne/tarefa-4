@@ -13,18 +13,18 @@ $action = @$_REQUEST['action'];
 //$view = 'list_reserva.php';// View default
 
 // Decidir qual ação será tomada
-if($action == 'novo') {
+if($action == 'reservar') {
     if(empty($_SESSION)){
         $view = "../view_usuario/login.php";
         require_once($view);
     }else{
         $id_tarifa = $_POST['id_tarifa'];
-        require_once('crtl_tarifa.php');
-        $tarifa = $tarifaDAO->getTarifaById($id_tarifa);
-
+        require_once('ctrl_tarifa.php');
+        $tarifa = $tarifaDAO->getById($id_tarifa);
+        echo "Depois de tarifadao";
         $id_usuario = $_SESSION['id'];
         $qtd_pessoas = intval($_REQUEST['qtd_adultos']) + intval($_REQUEST['qtd_criancas']);
-        $valor_reserva = $tarifa->valor_reserva + $tarifa->precoA * (intval($_REQUEST['qtd_adultos']) - 1) +  $tarifa->precoC * intval($_REQUEST['qtd_criancas']);
+        $valor_reserva = ($tarifa->preco + $tarifa->preco_adulto * (intval($_REQUEST['qtd_adultos']) - 1) + $tarifa->preco_crianca * intval($_REQUEST['qtd_criancas']));
 
         $data_entrada = @$_REQUEST['data_entrada'];
         $data_saida = @$_REQUEST['data_saida'];

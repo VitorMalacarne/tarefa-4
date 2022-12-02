@@ -17,6 +17,8 @@ class UsuarioDAO {
     function getUsuarioByEmail($email) {
         $sql = "SELECT * FROM tb_usuario WHERE email = ?";
 
+        echo "Dentro de getusuariobyemail";
+
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(1, $email);
 
@@ -26,14 +28,15 @@ class UsuarioDAO {
     
     function insert($post) {
         $sql = "INSERT INTO tb_usuario (
-            nome, email, senha, telefone)
-            VALUES (:nome,:email,:senha,:telefone)";
+            nome, email, telefone, senha, perfil)
+            VALUES (:nome,:email,:telefone,:senha,:perfil)";
         
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':nome', $post['nome']);
         $stmt->bindParam(':email', $post['email']);
-        $stmt->bindParam(':telefone', $post['senha']);
-        $stmt->bindParam(':senha', $post['telefone']);
+        $stmt->bindParam(':senha', $post['senha']);
+        $stmt->bindParam(':telefone', $post['telefone']);
+        $stmt->bindParam(':perfil', $post['perfil']);
         return $stmt->execute();
     }
 
@@ -42,7 +45,8 @@ class UsuarioDAO {
             nome = :nome,
             email = :email,
             telefone = :telefone,
-            senha = :senha
+            senha = :senha,
+            perfil = :perfil
             WHERE id = :id';
         
         $stmt = $this->pdo->prepare($sql);
@@ -50,6 +54,7 @@ class UsuarioDAO {
         $stmt->bindValue(':email', $post['email']);
         $stmt->bindValue(':telefone', $post['telefone']);
         $stmt->bindValue(':senha', $post['senha']);
+        $stmt->bindValue(':perfil', $post['perfil']);
         $stmt->bindValue(':id', $post['id']);
 
         return $stmt->execute();

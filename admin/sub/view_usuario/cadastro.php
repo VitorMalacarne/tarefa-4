@@ -1,5 +1,6 @@
 <?php
     session_start();
+	header('location cadastro.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,6 +32,9 @@
 			</nav>
 			<div class="phantomdiv"></div>
 			<main>
+				<?php 
+				echo @$message; 
+				?>
 				<form action="../view_adm/ctrl_usuario.php?action=novo" method="post">
 					<fieldset>
 						<legend>Cadastro</legend>
@@ -43,7 +47,9 @@
                         <label for="senha">Senha</label>
                         <input type="password" name="senha" placeholder="*********" autocomplete="off" required><br>
 						<label for="">Confirmar senha</label>
-		                <input  type="password" name="confirmar_senha" placeholder="*********" autocomplete="off" required>
+		                <input type="password" name="confirmar_senha" placeholder="*********" autocomplete="off" required>
+						<label for="perfil">Perfil</label>
+						<input type="text" name="perfil" autocomplete="off"><br>
 					</fieldset>
 					
 					<input type="submit" value="Fazer cadastro">

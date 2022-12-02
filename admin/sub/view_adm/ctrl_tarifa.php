@@ -17,7 +17,6 @@
             $res;
             if(!@$_REQUEST['id']){
                 echo "Esse é o id".$_REQUEST['id'];
-                require_once('swsw');
                 $res = $tarifaDAO->insert(@$_POST);
             }else{
                 $res = $tarifaDAO->update(@$_POST);

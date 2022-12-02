@@ -40,15 +40,15 @@
 				<form action="../view_adm/ctrl_acom.php?action=procurar" method="post">
 					<fieldset>
 						<legend>Dados da reserva</legend>
-						<label for="daen">Data de entrada</label><br>
+						<label for="data_entrada">Data de entrada</label><br>
 						<input type="date" name="data_entrada" placeholder="dd/mm/aaaa" autocomplete="off" required><br>
-						<label for="dasa">Data de saída</label><br>
+						<label for="data_saida">Data de saída</label><br>
 						<input type="date" name="data_saida" placeholder="dd/mm/aaaa" autocomplete="off" required><br>
-						<label for="quanad">Adultos</label><br>
+						<label for="qtd_adultos">Adultos</label><br>
 						<input type="number" name="qtd_adultos" min="1" max="4" step="1" value="1" autocomplete="off" required><br>
-						<label for="quancr">Crianças</label><br>
+						<label for="qtd_criancas">Crianças</label><br>
 						<input type="number" name="qtd_criancas" min="0" max="4" step="1" value="0" autocomplete="off"required><br>
-						<label for="acom">Acomodação</label><br>
+						<label for="tipo_acomodacao">Acomodação</label><br>
 						<select name="tipo_acomodacao" autocomplete="off"required>
 							<option value="" disabled selected hidden>Selecione</option>
 							<option value="standart">Standart</option>
@@ -85,15 +85,20 @@
                             </li>
 
                         </ul>
-                        <form action="../view_adm/ctrl_reserva.php?action=novo&qtd_adultos=<?= @$_REQUEST['qtd_adultos']?>&qtd_criancas=<?= @$_REQUEST['qtd_criancas']?>&data_entrada=<?= @$_REQUEST['data_entrada']?>&data_saida=<?= @$_REQUEST['data_saida']?>" method="post">
+						<?php if(empty($_SESSION) !== true): ?>
+                        <form action="../view_adm/ctrl_reserva.php?action=reservar&qtd_adultos=<?= @$_REQUEST['qtd_adultos']?>&qtd_criancas=<?= @$_REQUEST['qtd_criancas']?>&data_entrada=<?= @$_REQUEST['data_entrada']?>&data_saida=<?= @$_REQUEST['data_saida']?>" method="post">
                             <input type="hidden" name="id_acomodacao" value="<?= $acomodacao->id ?>">
                             <input type="hidden" name="id_tarifa" value="<?= @$acomodacao->id_tarifa ?>">
                             <input type="submit" value="Reservar">
                         </form>
+						<?php endif; ?>
                         
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
+			<?php if(empty($_SESSION)): ?>
+				<p>Você deve estar estar conectado a uma conta para poder realizar uma reserva</p>
+        <?php endif; ?>
         </div>
 			</main>
 			<aside>
