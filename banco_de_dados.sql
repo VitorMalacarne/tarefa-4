@@ -17,9 +17,10 @@ CREATE TABLE `tb_acomodacao` (
 `id_tarifa` int DEFAULT NULL,
 `qtd_camas_casal` INT NOT NULL, 
 `qtd_camas_solteiro` INT NOT NULL, 
+`qtd_pessoas` INT NOT NULL,
 `tipo_apartamento` VARCHAR(10) NOT NULL, 
 `tipo_acomodacao` VARCHAR(15) NOT NULL, 
-PRIMARY KEY (`id`)
+PRIMARY KEY (`id`),
 FOREIGN KEY(`id_tarifa`) REFERENCES tb_tarifa(id)
 ) ENGINE = InnoDB;
 
@@ -36,8 +37,7 @@ CREATE TABLE `tb_reserva` (
 `id_acomodacao` INT NOT NULL, 
 `data_entrada` DATE NOT NULL, 
 `data_saida` DATE NOT NULL, 
-`qtd_adultos` INT NOT NULL, 
-`qtd_criancas` INT NOT NULL, 
+`qtd_pessoas` INT NOT NULL, 
 `valor_reserva` DECIMAL NOT NULL, 
 PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;

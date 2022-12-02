@@ -66,3 +66,5 @@ if($view == 'list_usuario.php') {
 }
 
 require_once($view); // Abrindo uma view
+
+?>

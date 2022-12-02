@@ -7,12 +7,6 @@ class ReservaDAO {
         $this->pdo = $pdo;
     }
 
-    /**
-     * Método para obter todas as pessoas cadastradas
-     * no banco de dados.
-     * 
-     * Return: Lista de pessoas
-     */
     function getAll() {
         $sql = "SELECT * from tb_reserva";
         $stmt = $this->pdo->prepare($sql);
@@ -21,11 +15,6 @@ class ReservaDAO {
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
-    /**
-     * Buscar uma pessoa pelo ID
-     * 
-     * Return: Objeto pessoa.
-     */
     function getById($id) {
         $sql = "SELECT * FROM tb_reserva WHERE id = ?";
 
@@ -36,51 +25,34 @@ class ReservaDAO {
         return $stmt->fetchObject();
     }
 
-    function insert($post) {
+    function insert($post,$id_usuario,$qtd_pessoas,$valor_reserva,$data_entrada,$data_saida) {
+
         $sql = "INSERT INTO tb_reserva (
-            id_usuario, id_acomodacao, data_entrada, data_saida, qtd_adultos, qtd_criancas, valor_reserva) 
-            VALUES (:id_usuario,:id_acomodacao,:data_entrada,:data_saida,:qtd_adultos,:qtd_criancas,:valor_reserva)";
+            id_usuario, id_acomodacao, data_entrada, data_saida, qtd_pessoas, valor_reserva) 
+            VALUES (:id_usuario,:id_acomodacao,:data_entrada,:data_saida,:qtd_pessoas,:valor_reserva)";
         
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(':id_usuario', $post['id_usuario']);
+        $stmt->bindValue(':id_usuario', $id_usuario);
         $stmt->bindValue(':id_acomodacao', $post['id_acomodacao']);
-        $stmt->bindValue(':data_entrada', $post['data_entrada']);
-        $stmt->bindValue(':data_saida', $post['data_saida']);
-        $stmt->bindValue(':qtd_adultos', $post['qtd_adultos']);
-        $stmt->bindValue(':qtd_criancas', $post['qtd_criancas']);
-        $stmt->bindValue(':valor_reserva', $post['valor_reserva']);
+        $stmt->bindValue(':data_entrada', $data_entrada);
+        $stmt->bindValue(':data_saida', $data_saida);
+        $stmt->bindValue(':qtd_pessoas', $qtd_pessoas);
+        $stmt->bindValue(':valor_reserva', $valor_reserva);
         return $stmt->execute();
     }
 
-    function update($post) {
-        $sql = 'UPDATE tb_acomodacao SET 
-            id_usuario = :id_usuario,
-            id_acomodacao = :id_acomodacao,
-            data_entrada = :data_entrada,
-            data_saida = :data_saida,
-            qtd_adultos = :qtd_adultos,
-            qtd_criancas = :qtd_criancas,
-            valor_reserva = :valor_reserva
-            WHERE id = :id';
-        
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(':id_usuario', $post['id_usuario']);
-        $stmt->bindValue(':id_acomodacao', $post['id_acomodacao']);
-        $stmt->bindValue(':data_entrada', $post['data_entrada']);
-        $stmt->bindValue(':data_saida', $post['data_saida']);
-        $stmt->bindValue(':qtd_adultos', $post['qtd_adultos']);
-        $stmt->bindValue(':qtd_criancas', $post['qtd_criancas']);
-        $stmt->bindValue(':valor_reserva', $post['valor_reserva']);
-        $stmt->bindValue(':id', $post['id']);
+    function getAllDatas($id_acomodacao){
+        $sql = "SELECT id_acomodacao, data_entrada, data_saida FROM tb_reserva
+            WHERE id_acomodacao = :id";
 
-        return $stmt->execute();
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":id", $id_acomodacao);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
-    /**
-     * Deletar uma pessoa do banco de dados.
-     * 
-     * Return: quantidade de linhas apagadas.
-     */
     function delete($id) {
         $sql = "DELETE FROM tb_reserva WHERE id = ?";
 
@@ -91,5 +63,5 @@ class ReservaDAO {
 
         return $stmt->rowCount();
     }
-
 }
+?>
