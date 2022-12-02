@@ -30,6 +30,7 @@
             <thead>
                 <tr>
                     <th>id</th>
+                    <th>id_tarifa</th>
                     <th>Quantidade de camas de casal</th>
                     <th>Quantidade de camas de solteiro</th>
                     <th>Tipo de acomodação</th>
@@ -41,6 +42,7 @@
                 <?php foreach ($acomodacoes as $index => $acomodacao): ?>
                 <tr>
                     <td><?= $acomodacao->id ?></td>
+                    <td><?= $acomodacao->id_tarifa ?></td>
                     <td><?= $acomodacao->qtd_camas_casal ?></td>
                     <td><?= $acomodacao->qtd_camas_solteiro ?></td>
                     <td><?= $acomodacao->tipo_acomodacao ?></td>

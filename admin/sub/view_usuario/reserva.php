@@ -62,7 +62,7 @@
             <h4>Acomodações encontradas</h4>
             <!-- comentario -->
             <?php if(empty($acomodacoes)): ?>
-                <div class = "nulo">
+                <div>
                     <p>Nenhuma acomodação encontrada dentro das condicões!</p>
                 </div>
             <?php else: ?>
@@ -78,8 +78,12 @@
                                 
                             </li>
                             <li>
-                                <p>2 camas de solteiro</p>
+                                <p><?= @$acomodacao->qtd_camas_casal ?> cama(s) de casal</p>
                             </li>
+							<li>
+                                <p><?= @$acomodacao->qtd_camas_solteiro ?> cama(s) de solteiro</p>
+                            </li>
+
                         </ul>
                         <form action="../view_adm/ctrl_reserva.php?action=novo&qtd_adultos=<?= @$_REQUEST['qtd_adultos']?>&qtd_criancas=<?= @$_REQUEST['qtd_criancas']?>&data_entrada=<?= @$_REQUEST['data_entrada']?>&data_saida=<?= @$_REQUEST['data_saida']?>" method="post">
                             <input type="hidden" name="id_acomodacao" value="<?= $acomodacao->id ?>">

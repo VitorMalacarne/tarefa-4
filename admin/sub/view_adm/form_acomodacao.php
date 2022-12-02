@@ -50,8 +50,8 @@
                         <label for="tipo_apartamento">Tipo de apartamento:</label>
                         <select name="tipo_apartamento">
 						<option value="" disabled selected hidden>Selecione</option>
-						<option value="dupla">Dupla</option>
-						<option value="tripla">Tripla</option>
+						<option value="duplo">Dupla</option>
+						<option value="triplo">Tripla</option>
 						<option value="familia">Família</option>
 						</select><br>-
 					</fieldset>

@@ -21,11 +21,10 @@ CREATE TABLE `tb_acomodacao` (
 `tipo_apartamento` VARCHAR(10) NOT NULL, 
 `tipo_acomodacao` VARCHAR(15) NOT NULL, 
 PRIMARY KEY (`id`),
-FOREIGN KEY(`id_tarifa`) REFERENCES tb_tarifa(id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE `tb_tarifa` (
-`id` INT NOT NULL --AUTO_INCREMENT, 
+`id` INT NOT NULL, 
 `preco` DECIMAL NOT NULL, 
 `preco_adulto` DECIMAL NOT NULL,
 `preco_crianca` DECIMAL NOT NULL, 
