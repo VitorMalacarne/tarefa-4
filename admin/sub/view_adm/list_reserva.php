@@ -43,12 +43,12 @@
                 <?php foreach ($reservas as $index => $reserva): ?>
                 <tr>
                     <td><?= $reserva->id ?></td>
-                    <td><?= $reserva->user_id ?></td>
-                    <td><?= $reserva->acom_id ?></td>
-                    <td><?= $reserva->data_in ?></td>
-                    <td><?= $reserva->data_out ?></td>
-                    <td><?= $reserva->qtd_hospedes ?></td>
-                    <td><?= $reserva->preco ?></td>
+                    <td><?= $reserva->id_usuario ?></td>
+                    <td><?= $reserva->id_acomodacao ?></td>
+                    <td><?= $reserva->data_entrada ?></td>
+                    <td><?= $reserva->data_saida ?></td>
+                    <td><?= $reserva->qtd_pessoas ?></td>
+                    <td><?= $reserva->valor_reserva ?></td>
                     <td>
                         <a  href="ctrl_acom.php?action=deletar&id=<?= $reserva->id ?> " onclick="return confirm('Tem certeza de que deseja excluir o registro?');">Excluir</a>
                     </td>

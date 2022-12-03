@@ -72,11 +72,11 @@ if($action == 'novo') {
     foreach($acomodacoes as $index=> $acomodacao){
         $reservas = $reservaDAO->getAllDatas($acomodacao->id);
         foreach($reservas as $index2=> $reserva){
-            echo $reserva->data_in;
-            if($dataEntrada >= $reserva->data_in && $dataEntrada < $reserva->data_out){
+            echo $reserva->data_entrada;
+            if($dataEntrada >= $reserva->data_entrada && $dataEntrada < $reserva->data_saida){
                 unset($acomodacoes[$index]);
             }
-            if($dataSaida > $reserva->data_in && $dataSaida <= $reserva->data_out){
+            if($dataSaida > $reserva->data_entrada && $dataSaida <= $reserva->data_saida){
                 unset($acomodacoes[$index]);
             }
         }

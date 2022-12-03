@@ -33,7 +33,7 @@ if($action == 'reservar') {
 
         $reservaDAO->insert(@$_POST, $id_usuario, $qtd_pessoas, $valor_reserva, $data_entrada, $data_saida);
 
-        $view = "../view_usuario/";
+        $view = "../view_usuario/principal.php";
         header('location: ' . $view);
     }
 
