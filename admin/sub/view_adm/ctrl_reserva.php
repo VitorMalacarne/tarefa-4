@@ -26,8 +26,10 @@ if($action == 'reservar') {
     require_once('ctrl_tarifa.php');
     $tarifa = $tarifaDAO->getById($id_tarifa);
     echo "Depois de tarifadao";
+    //echo $_REQUEST['id_acomodacao'];
     $reservas_mesmo_id = $reservaDAO->getAllDatas(@$_REQUEST['id_acomodacao']);
-    foreach($reservas_mesmo_id as $index => $reserva_mesmo_id){
+    
+    /*foreach($reservas_mesmo_id as $index => $reserva_mesmo_id){
         if($reserva_mesmo_id['data_entrada'] >= $data_entrada && $reserva_mesmo_id['data_entrada'] < $data_saida){
             $message = "Conflito de datas!";
             $view = "../view_usuario/reserva.php";
@@ -38,7 +40,7 @@ if($action == 'reservar') {
             $view = "../view_usuario/reserva.php";
             header('location: ' . $view);
         }
-    }
+    }*/
     $id_usuario = $_SESSION['id'];
     $qtd_pessoas = intval($_REQUEST['qtd_adultos']) + intval($_REQUEST['qtd_criancas']);
     $valor_reserva = ($tarifa->preco + $tarifa->preco_adulto * (intval($_REQUEST['qtd_adultos']) - 1) + $tarifa->preco_crianca * intval($_REQUEST['qtd_criancas']));

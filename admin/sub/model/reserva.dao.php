@@ -42,11 +42,11 @@ class ReservaDAO {
     }
 
     function getAllDatas($id_acomodacao){
-        $sql = "SELECT id_acomodacao, data_entrada, data_saida FROM tb_reserva
-            WHERE id_acomodacao = :id";
+        $sql = "SELECT data_entrada, data_saida FROM tb_reserva
+            WHERE id_acomodacao = :id_acomodacao";
 
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(":id", $id_acomodacao);
+        $stmt->bindValue(":id_acomodacao", $id_acomodacao);
 
         $stmt->execute();
 

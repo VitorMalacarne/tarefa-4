@@ -14,20 +14,20 @@
 			<h1>POUSADA DAS CAPIVARAS - Cadastro de usuário</h1>
 			<nav id="headnav">
 				<ul>
-					<li><a href="principal.php">HOME</a></li>
-					<li><a href="reserva.php">RESERVA</a></li>
-					<li><a href="acomodacoes.php">ACOMODAÇÕES</a></li>
-					<li><a href="cadastro.php" class="active">CADASTRO</a></li>
+					<li><a href="../view_usuario/principal.php">HOME</a></li>
+					<li><a href="../view_usuario/reserva.php">RESERVA</a></li>
+					<li><a href="../view_usuario/acomodacoes.php">ACOMODAÇÕES</a></li>
+					<li><a href="../view_usuario/cadastro.php" class="active">CADASTRO</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div id="maindiv">
 			<nav id="mainnav">
 				<ul>
-					<li><a href="principal.php">A Pousada</a></li>
-					<li><a href="reserva.php">Reserva</a></li>
-					<li><a href="acomodacoes.php">Acomodações</a></li>
-					<li><a href="faleconosco.php">Fale Conosco</a></li>
+					<li><a href="../view_usuario/principal.php">A Pousada</a></li>
+					<li><a href="../view_usuario/reserva.php">Reserva</a></li>
+					<li><a href="../view_usuario/acomodacoes.php">Acomodações</a></li>
+					<li><a href="../view_usuario/faleconosco.php">Fale Conosco</a></li>
 				</ul>
 			</nav>
 			<div class="phantomdiv"></div>
